@@ -43,7 +43,7 @@
       right: -110px;
       width: 300px;
       height: 300px;
-      background: radial-gradient(#367583, #00a3a9);
+      background: radial-gradient(#00a3a9, #006770);
       overflow: hidden;
     }
   </style>
@@ -106,7 +106,7 @@
       <!-- Right elements -->
       <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
         <button type="button"
-          class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+          class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 dark:text-cyan-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-60"
           data-te-ripple-init data-te-ripple-color="light">
           Login
         </button>
@@ -129,7 +129,7 @@
         <div class="mt-12 lg:mt-0" style="z-index: 10">
           <h1
             class="mt-0 mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-[hsl(218,81%,95%)]">
-            The best offer <br /><span class="text-[hsl(218,81%,75%)]">for your business</span>
+            The best offer <br /><span class="text-cyan-400">for your business</span>
           </h1>
           <p class="opacity-70 text-[hsl(218,81%,85%)]">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
