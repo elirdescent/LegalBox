@@ -12,28 +12,28 @@
     <!-- Section: Design Block -->
 <section class="background-radial-gradient mb-40 overflow-hidden">
   <style>
-    .background-radial-gradient {
-      background-color: hsl(218, 41%, 15%);
-      background-image: radial-gradient(650px circle at 0% 0%,
-          hsl(218, 41%, 35%) 15%,
-          hsl(218, 41%, 30%) 35%,
-          hsl(218, 41%, 20%) 75%,
-          hsl(218, 41%, 19%) 80%,
-          transparent 100%),
-        radial-gradient(1250px circle at 100% 100%,
-          hsl(218, 41%, 45%) 15%,
-          hsl(218, 41%, 30%) 35%,
-          hsl(218, 41%, 20%) 75%,
-          hsl(218, 41%, 19%) 80%,
-          transparent 100%);
-    }
+  .background-radial-gradient {
+    background-color: hsl(180, 41%, 15%);
+    background-image: radial-gradient(650px circle at 0% 0%,
+        hsl(180, 41%, 35%) 15%,
+        hsl(180, 41%, 30%) 35%,
+        hsl(180, 41%, 20%) 75%,
+        hsl(180, 41%, 19%) 80%,
+        transparent 100%),
+    radial-gradient(1250px circle at 100% 100%,
+        hsl(180, 41%, 45%) 15%,
+        hsl(180, 41%, 30%) 35%,
+        hsl(180, 41%, 20%) 75%,
+        hsl(180, 41%, 19%) 80%,
+        transparent 100%);
+}
 
     #radius-shape-1 {
       height: 220px;
       width: 220px;
       top: -60px;
       left: -130px;
-      background: radial-gradient(#44006b, #ad1fff);
+      background: radial-gradient( #00a3a9, #006770);
       overflow: hidden;
     }
 
@@ -43,7 +43,7 @@
       right: -110px;
       width: 300px;
       height: 300px;
-      background: radial-gradient(#44006b, #ad1fff);
+      background: radial-gradient(#367583, #00a3a9);
       overflow: hidden;
     }
   </style>
