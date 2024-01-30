@@ -254,14 +254,14 @@
       
     </style>
 
-    <div class=" text-center text-white lg:h-[400px] h-[300px] lg:pt-[80px] pt-[55px]">
-      <h2 class="mb-12 text-cyan-400 text-center text-4xl font-bold">Features</h2>
+    <div class=" text-center text-white lg:h-[400px] h-[300px]  ">
+      <h2 class="mb-12 text-cyan-400 text-center text-7xl font-bold">Features</h2>
     </div>
 
     <div class="grid px-6 md:px-12 lg:grid-cols-3 xl:px-32" style="margin-top: -200px">
       <div class="p-0 py-12">
         <div
-          class="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 lg:rounded-tr-none lg:rounded-br-none">
+          class="relative bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,15%,0.9)] dark:shadow-black/20 md:px-12">
           <div class="border-b-2 border-neutral-100 border-opacity-100 p-6 text-center dark:border-opacity-10">
             <p class="mb-4 text-sm uppercase">
               <strong>Basic</strong>
@@ -271,11 +271,7 @@
               <small class="text-base text-neutral-500 dark:text-neutral-300">/year</small>
             </h3>
 
-            <button type="button"
-              class="inline-block w-full rounded bg-primary-100 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
-              data-te-ripple-init data-te-ripple-color="light">
-              Buy
-            </button>
+            
           </div>
           <div class="p-6">
             <ol class="list-inside">
@@ -297,6 +293,18 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>npm
                 installation
               </li>
+               <li class="mb-4 flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Git
+                repository
+              </li>
+               <li class="mb-4 flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Git
+                repository
+              </li>
             </ol>
           </div>
         </div>
@@ -304,7 +312,7 @@
 
       <div>
         <div
-          class="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+          class="relative bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,15%,0.9)] dark:shadow-black/20 md:px-12"
           style="z-index: 1">
           <div class="border-b-2 border-neutral-100 border-opacity-100 p-6 text-center dark:border-opacity-10">
             <p class="mb-4 text-sm uppercase">
@@ -315,11 +323,7 @@
               <small class="text-base text-neutral-500 dark:text-neutral-300">/year</small>
             </h3>
 
-            <button type="button"
-              class="inline-block w-full rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-              data-te-ripple-init data-te-ripple-color="light">
-              Buy
-            </button>
+            
           </div>
           <div class="p-6">
             <ol class="list-inside">
@@ -371,7 +375,7 @@
 
       <div class="py-12">
         <div
-          class="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 lg:rounded-tl-none lg:rounded-bl-none">
+          class="relative bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,15%,0.9)] dark:shadow-black/20 md:px-12">
           <div class="border-b-2 border-neutral-100 border-opacity-100 p-6 text-center dark:border-opacity-10">
             <p class="mb-4 text-sm uppercase">
               <strong>Advanced</strong>
@@ -381,11 +385,7 @@
               <small class="text-base text-neutral-500 dark:text-neutral-300">/year</small>
             </h3>
 
-            <button type="button"
-              class="inline-block w-full rounded bg-primary-100 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
-              data-te-ripple-init data-te-ripple-color="light">
-              Buy
-            </button>
+            
           </div>
           <div class="p-6">
             <ol class="list-inside">
@@ -427,8 +427,8 @@
   <!-- Section: Design Block -->
 </div>
 <!-- Footer -->
-<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
-  <nav class="grid grid-flow-col gap-4">
+<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded ">
+  <nav class="grid grid-flow-col gap-4 ">
     <a class="link link-hover">About us</a>
     <a class="link link-hover">Contact</a>
     <a class="link link-hover">Jobs</a>
