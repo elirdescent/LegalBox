@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::view('/home','home');
+Route::view('/homePage','index');
