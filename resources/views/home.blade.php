@@ -10,7 +10,7 @@
 <body class="background-radial-gradient">
 
     <!-- Section: Design Block -->
-<section class=" mb-10 overflow-hidden">
+<section class="  overflow-hidden">
   <style>
   .background-radial-gradient {
     background-color: hsl(180, 41%, 15%);
@@ -71,7 +71,11 @@
         <!-- Navbar Brand -->
         <a class="text-primary dark:text-primary-400" href="#!">
           <span class="[&>svg]:ml-2 [&>svg]:mr-3 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:lg:ml-0">
-           <img src="{{URL('images/elaw.png')}}" alt="" class="h-10 w-10">
+            <div class="flex">
+              <img src="{{URL('images/elaw.png')}}" alt="" class="h-10 w-10">
+           <img src="{{URL('images/legalboxteal.png')}}" alt="" class="h-8 mt-1">
+            </div>
+           
           </span>
         </a>
       </div>
@@ -81,11 +85,7 @@
         id="navbarSupportedContentY" data-te-collapse-item>
         <!-- Left links -->
         <ul class="mr-auto lg:flex lg:flex-row" data-te-navbar-nav-ref>
-          <li data-te-nav-item-ref>
-            <a class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 dark:disabled:text-white/30 lg:px-2 [&.active]:text-black/80 dark:[&.active]:text-white/80"
-              href="#!" data-te-nav-link-ref data-te-ripple-init data-te-ripple-color="light"
-              disabled>Home</a>
-          </li>
+         
          
         </ul>
         <!-- Left links -->
@@ -112,7 +112,7 @@
   <!-- Navbar -->
 
   <!-- Jumbotron -->
-  <div class=" text-center md:px-12 lg:py-24 lg:text-left">
+  <div class=" text-center md:px-12 lg:py-24 lg:text-left  " id="jumbotron">
     <div class="w-100 mx-auto text-neutral-800 sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <div class="mt-12 lg:mt-0 px-10 lg:px-0" style="z-index: 10">
@@ -125,6 +125,7 @@
           <p class="opacity-70 text-sky-50">
             Introducing LegalBox, a cutting-edge web application designed for legal professionals seeking unparalleled case and client management. Streamline your legal practice with intuitive features that empower you to effortlessly organize and track legal cases.
           </p>
+        
         </div>
         <div class="relative mb-12 lg:mb-0 px-6 lg:px-0">
           <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
@@ -149,15 +150,21 @@
   <!-- Jumbotron -->
 </section>
 
-<div class="container my-12 mx-auto  mt-0">
-  <!-- Features Blockk -->
-  <section class="mb-32">
+<div class="container my-12 mx-auto  mt-0" >
+  <!-- Features Block -->
+  <section class="mb-32" >
     <style>
       
     </style>
-
+    
     <div class=" text-center text-white lg:h-[400px] h-[300px]  ">
       <h2 class="mb-12 text-cyan-400 text-center text-7xl font-bold">Features</h2>
+      <div class="hidden md:hidden lg:flex justify-between">
+        <img src="{{URL('images/flying.png')}}" alt="" class="h-64 z-10">
+        <img src="{{URL('images/flying2.png')}}" alt="" class="h-32 lg:h-80 mt-0 md:mt-0  lg:mt-20 z-10 ">
+      </div>
+  
+     
     </div>
 
     <div class="grid px-6 md:px-12 lg:grid-cols-3 xl:px-32" style="margin-top: -200px">
@@ -294,10 +301,23 @@
 <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded ">
   
   <aside>
-    <p>Copyright © 2024 - All right reserved by LegalBox</p>
+    <p>Copyright © 2024 - All rights reserved by LegalBox</p>
   </aside>
 </footer>
 <!-- Section: Design Block -->
     
 </body>
+<script>
+        let element = document.getElementById("jumbotron");
+      let opacity = 0;
+      function fade() {
+         if (opacity >= 1) {
+            return;
+         }
+         opacity += 0.04;
+         element.style.opacity = opacity;
+         requestAnimationFrame(fade);
+      }
+      requestAnimationFrame(fade);
+</script>
 </html>
