@@ -49,29 +49,23 @@
   </style>
   <!-- Navbar -->
   <nav
-    class="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 dark:bg-neutral-800 dark:shadow-black/30  lg:flex-wrap lg:justify-start"
+    class=" bg-white py-2 shadow-sm shadow-neutral-700/10 dark:bg-neutral-800 dark:shadow-black/30  "
     data-te-navbar-ref>
     <!-- Container wrapper -->
-    <div class="flex w-full flex-wrap items-center justify-between px-6">
+    <div class="flex w-full flex-wrap items-start justify-between px-6">
       <div class="flex items-center">
         <!-- Toggle button -->
         <button
           class="block border-0 bg-transparent py-2 pr-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
           type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
           aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="[&>svg]:w-7">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
-              <path fill-rule="evenodd"
-                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                clip-rule="evenodd" />
-            </svg>
-          </span>
+          <img src="{{URL('images/elaw.png')}}" alt="" class="h-10 w-10">
         </button>
 
         <!-- Navbar Brand -->
         <a class="text-primary dark:text-primary-400" href="#!">
           <span class="[&>svg]:ml-2 [&>svg]:mr-3 [&>svg]:h-6 [&>svg]:w-6 [&>svg]:lg:ml-0">
-            <div class="flex">
+            <div class="hidden lg:flex">
               <img src="{{URL('images/elaw.png')}}" alt="" class="h-10 w-10">
            <img src="{{URL('images/legalboxteal.png')}}" alt="" class="h-8 mt-1">
             </div>
@@ -112,14 +106,14 @@
   <!-- Navbar -->
 
   <!-- Jumbotron -->
-  <div class=" text-center md:px-12 lg:py-24 lg:text-left  " id="jumbotron">
+  <div class=" text-center md:px-12 lg:py-24 lg:text-left " id="jumbotron">
     <div class="w-100 mx-auto text-neutral-800 sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
-      <div class="grid items-center gap-12 lg:grid-cols-2">
-        <div class="mt-12 lg:mt-0 px-10 lg:px-0" style="z-index: 10">
-          
+      <div class="grid items-center  gap-12 lg:grid-cols-2">
+        <div class=" mt-12 lg:mt-0 px-10 lg:px-0" style="z-index: 10">
+          <img src="{{URL('images/legalboxteal.png')}}" alt="" class="h-20 ">
           <h1
-            class="mt-0 mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-[hsl(218,81%,95%)]">
-            <img src="{{URL('images/legalboxteal.png')}}" alt="" class="h-20 ">
+            class="mt-0  mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-[hsl(218,81%,95%)]">
+           
             Your legal case, <br /><span class="text-cyan-400">our expertise</span>
           </h1>
           <p class="opacity-70 text-sky-50">
