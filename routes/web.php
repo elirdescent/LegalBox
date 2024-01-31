@@ -21,3 +21,4 @@ Route::view('/home','home');
 Route::view('/homePage','index');
 Route::view('login', 'lawyerlogin');
 Route::view('firmlogin', 'firmlogin');
+Route::view('register','lawyerregister');
