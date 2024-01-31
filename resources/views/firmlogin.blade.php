@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <link rel="icon" type="image/x-icon" href="/images/elaw.png">
+    <title>Law Firm </title>
     <link rel="stylesheet" href="{{asset('css/gradient.css')}}">
     @vite('resources/css/app.css')
 </head>
@@ -15,7 +16,7 @@
   <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
     
       <div class="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
-        <img src="{{URL('images/woman.png')}}" class="hidden lg:flex mb-3 object-scale-down w-96">
+        <img src="{{URL('images/lawfirmm.png')}}" class="hidden lg:flex mb-3 object-scale-down w-4/5">
 
         <div class="self-start hidden lg:flex flex-col  text-white">
 
