@@ -5,48 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <link rel="stylesheet" href="{{asset('css/gradient.css')}}">
     @vite('resources/css/app.css')
 </head>
 <body class="background-radial-gradient">
 
     <!-- Section: Design Block -->
 <section class="  overflow-hidden">
-  <style>
-  .background-radial-gradient {
-    background-color: hsl(180, 41%, 15%);
-    background-image: radial-gradient(650px circle at 0% 0%,
-        hsl(180, 41%, 35%) 15%,
-        hsl(180, 41%, 30%) 35%,
-        hsl(180, 41%, 20%) 75%,
-        hsl(180, 41%, 19%) 80%,
-        transparent 100%),
-    radial-gradient(1250px circle at 100% 100%,
-        hsl(180, 41%, 45%) 15%,
-        hsl(180, 41%, 30%) 35%,
-        hsl(180, 41%, 20%) 75%,
-        hsl(180, 41%, 19%) 80%,
-        transparent 100%);
-}
 
-    #radius-shape-1 {
-      height: 220px;
-      width: 220px;
-      top: -60px;
-      left: -130px;
-      background: radial-gradient( #00a3a9, #006770);
-      overflow: hidden;
-    }
-
-    #radius-shape-2 {
-      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
-      bottom: -60px;
-      right: -110px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(#00a3a9, #006770);
-      overflow: hidden;
-    }
-  </style>
   <!-- Navbar -->
   <nav
     class=" bg-white py-2 shadow-sm shadow-neutral-700/10 dark:bg-neutral-800 dark:shadow-black/30  "
@@ -88,11 +54,14 @@
 
       <!-- Right elements -->
       <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
-        <button type="button"
+        <a href="{{URL('login')}}">
+          <button type="button" 
           class="mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 dark:text-cyan-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-60"
           data-te-ripple-init data-te-ripple-color="light">
           Login
         </button>
+        </a>
+        
         <button type="button"
           class="inline-block rounded bg-cyan-400 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg- active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
           data-te-ripple-init data-te-ripple-color="light">
@@ -301,7 +270,7 @@
 <!-- Section: Design Block -->
     
 </body>
-<script>
+{{-- <script>
         let element = document.getElementById("jumbotron");
       let opacity = 0;
       function fade() {
@@ -313,5 +282,5 @@
          requestAnimationFrame(fade);
       }
       requestAnimationFrame(fade);
-</script>
+</script> --}}
 </html>
