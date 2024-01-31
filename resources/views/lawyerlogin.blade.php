@@ -23,6 +23,7 @@
           <p class="pr-3 text-lg">Log in to your account to continue managing your legal procedures and clients.</p>
         </div>
       </div>
+            
       
       <div class="flex justify-center self-center  z-10">
         

@@ -27,7 +27,7 @@
         </div>
         <div class="flex md:w-1/2 justify-center py-10 items-center">
             <form class="">
-                <h1 class="text-white font-bold text-2xl mb-1">Register as a <span class="text-cyan-400">Lawyer</span> </h1> 
+                <h1 class="text-white font-bold text-2xl mb-1">Register as a <span class="text-cyan-400">Firm</span> </h1> 
                 <p class="text-sm font-normal text-white mb-7">Welcome Back</p>
                 <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" viewBox="0 0 20 20"
