@@ -44,6 +44,14 @@
 
     <!-- component -->
     <section class="container mx-auto p-6 ">
+         <!-- Search Bar -->
+        <div class="bg-neutral-900 rounded-lg border-none p-3 mb-4 shadow-md">
+            <div class="flex items-center">
+                <i class="px-3 fas fa-search ml-1"></i>
+                <input type="text" placeholder="Search..." class="ml-3 focus:outline-none w-full bg-neutral-900">
+            </div>
+        </div>
+
         <div class="mb-2 flex justify-start items-center">
     </div>
         <div class="w-full mb-8 overflow-hidden rounded-lg ">
