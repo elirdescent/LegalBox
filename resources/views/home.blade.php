@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="{{asset('css/gradient.css')}}">
     @vite('resources/css/app.css')
 </head>
-<body class="background-radial-gradient">
+<body class="background-radial-gradient ">
 
     <!-- Section: Design Block -->
-<section class="  overflow-hidden">
+<section class="  overflow-hidden ">
 
   <!-- Navbar -->
   <nav
@@ -75,7 +75,7 @@
   <!-- Navbar -->
 
   <!-- Jumbotron -->
-  <div class=" text-center md:px-12 lg:py-24 lg:text-left " id="jumbotron">
+  <div class=" text-center md:px-12 lg:py-24 lg:text-left animate-fade-up" id="jumbotron">
     <div class="w-100 mx-auto text-neutral-800 sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
       <div class="grid items-center  gap-12 lg:grid-cols-2">
         <div class=" mt-12 lg:mt-0 px-10 lg:px-0" style="z-index: 10">
@@ -98,7 +98,7 @@
             <h1 class="text-4xl font-bold text-white text-center">Sign Up Now!</h1>
             <div class="hero-content flex-col lg:flex-row text-white">
               
-              <img src="{{URL('images/recruiter.png')}}" class="max-w-sm h-64" />
+              <img src="{{URL('images/recruiter.png')}}" class="max-w-sm h-64 " />
               <div class="pr-10">
                 
                 <p class="py-6">Sign up to manage your legal procedures and clients using LegalBox now. It's free!</p>
