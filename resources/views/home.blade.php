@@ -115,7 +115,7 @@
 
 <div class="container my-12 mx-auto  mt-0" >
   <!-- Features Block -->
-  <section class="mb-32" >
+  <section class="mb-32 animate-fade-down" >
     <style>
       
     </style>
