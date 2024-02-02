@@ -26,3 +26,4 @@ Route::view('firmregister','firmregister');
 Route::view('loginrole', 'role');
 Route::view('dashboard','lawyerdash');
 Route::view('clients','clientlist');
+Route::view('cases' , 'legalcases');
