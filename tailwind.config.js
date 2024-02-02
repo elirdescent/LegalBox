@@ -5,9 +5,20 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
+
+  
+
+  
   theme: {
     extend: {},
   },
   plugins: [require("daisyui"),
-  require('tailwindcss-animated')],
+  require('tailwindcss-animated'),
+  ],
+
+  
+
 }
+
+
+
