@@ -25,3 +25,4 @@ Route::view('register','lawyerregister');
 Route::view('firmregister','firmregister');
 Route::view('loginrole', 'role');
 Route::view('dashboard','lawyerdash');
+Route::view('clients','clientlist');
