@@ -61,6 +61,23 @@
   
      <!-- Delete Modal -->
 
+      <!-- Add Modal -->
+
+     <dialog id="my_modal_add" class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Hello!</h3>
+      <p class="py-4">Click the button below to close</p>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+   <!-- Delete Modal -->
+   
 </head>
 <body class>
 
@@ -102,7 +119,7 @@
                   <th class="px-4 py-3">Case</th>
                   <th class="px-4 py-3"></th>
                   <th class="px-4 py-3"></th>
-                  <th class="px-4 py-3"></th>
+                  <td class=" py-3 text-sm"><button class="btn btn-sm rounded-full" onclick="my_modal_add.showModal()"><svg viewBox="0 0 24 24"class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L17 18M17 18L14 18M17 18V15M17 18V21M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button></td>
                 </tr>
               </thead>
               <tbody class="bg-neutral-800">
