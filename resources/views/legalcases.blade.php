@@ -32,17 +32,53 @@
         <!-- Edit Modal -->
 
 <dialog id="my_modal_edit" class="modal">
-    <div class="modal-box w-11/12 max-w-5xl">
-      <h3 class="font-bold text-lg">Hello!</h3>
-      <p class="py-4">Click the button below to close</p>
-      <div class="modal-action">
-        <form method="dialog">
-          <!-- if there is a button, it will close the modal -->
-          <button class="btn">Close</button>
+    <div class="modal-box w-full max-w-xl bg-neutral-900 p-8 rounded-lg">
+        <h3 class="font-bold text-2xl text-cyan-400 mb-4">Edit Your Case</h3>
+        <form action="" method="POST" class="grid grid-cols-1 gap-4">
+            <div class="mb-4">
+                <label for="title" class="text-blue-300">Case Title</label>
+                <br>
+                <input type="text" id="title" name="title" value=""
+                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+            </div>
+            <div class="mb-6">
+                <label for="name" class="text-blue-300">Client Name</label>
+                <br>
+                <input type="text" id="name" name="name" value=""
+                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+            </div>
+            <div class="mb-6">
+                <label for="surname" class="text-blue-300">Client Surname</label>
+                <br>
+                <input type="text" id="surname" name="surname" value=""
+                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+            </div>
+            <div class="mb-6">
+                <label for="task_description" class="text-blue-300">Case ID</label>
+                <br>
+                <input type="text" id="task_description" name="task_description" value=""
+                    class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+            </div>
+
+            <div class="mb-6">
+                <label for="case_progress" class="text-blue-300">Case Progress</label>
+                <br>
+                <input type="number" id="case_progress" value="" placeholder="" name="case_progress" min="0" max="100"
+                    class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+            </div>
+
+            <div class="flex items-center justify-between mt-6">
+                <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
+                </button>
+                <label for=""
+                    class="btn hover:bg-red-400 transition duration-300 ease-in-out btn-circle btn-sm ml-2"><i
+                        class="fas fa-minus"></i></label>
+            </div>
         </form>
-      </div>
     </div>
-  </dialog>
+</dialog>
+
+
   
      <!-- EditModal -->
 
