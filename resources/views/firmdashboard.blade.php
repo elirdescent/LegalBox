@@ -20,19 +20,19 @@
               <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Edit Profile</span></h2>
               <form action="" method="POST" class="grid grid-cols-1 gap-4">
                 <div class="mb-4">
-                    <label for="title" class="text-blue-300">Name</label>
+                    <label for="title" class="text-blue-300">Firm Name</label>
                     <br>
                     <input type="text" id="name" name="title" value=""
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="name" class="text-blue-300">Surname</label>
+                    <label for="name" class="text-blue-300">Username</label>
                     <br>
                     <input type="text" id="surname" name="surname" value=""
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="surname" class="text-blue-300">Username</label>
+                    <label for="surname" class="text-blue-300">Email</label>
                     <br>
                     <input type="text" id="username" name="surname" value=""
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
@@ -106,8 +106,8 @@
     <div>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-home mr-2 "></i>Home</a>
     
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-file-contract mr-2"></i> Legal Cases</a>
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-user mr-2"></i>Clients</a>
+    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-handshake mr-2"></i>Scheduled Meetings</a>
+    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-scale-balanced mr-2"></i>Lawyers</a>
     <label for="my_modal_signout" class="hover:cursor-pointer block px-4 py-2 mt-2 text-sm font-semibold text-white bg-error bg-opacity-30 transition ease-in-out duration-400 rounded-lg hover:text-error focus:text-neutral-900 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-right-from-bracket mr-1"></i> Sign Out</label>
    
   </nav>
@@ -119,12 +119,12 @@
         
 
     <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8 p-4">
-        <h1 class="text-3xl ml-2 py-5 font-bold">Welcome back, <span class="text-cyan-400">User</span>!</h1>
+        <h1 class="text-3xl ml-2 py-5 font-bold">Welcome back, <span class="text-cyan-400">Law Firm</span>!</h1>
       <div class="background-radial-gradient border-cyan-800  rounded-lg shadow mb-6">
         <div class="px-6">
           <div class="flex justify-between -mb-px">
             <div class="lg:hidden text-blue-dark py-4 text-lg font-bold">
-             Number of Clients
+             Number of Lawyers
             </div>
             <div class="hidden lg:flex">
         
@@ -156,7 +156,7 @@
                 
               </div>
               <div class="text-sm uppercase text-grey tracking-wide">
-                Number of Clients
+                Scheduled Meetings
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@
           <div class="flex-grow flex flex-col bg-neutral-900  rounded-xl shadow overflow-hidden">
             <div class="border-b-2 border-cyan-400">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-cyan-400 font-bold py-4  text-lg">Latest Clients</h3>
+                <h3 class="text-cyan-400 font-bold py-4  text-lg">Latest Scheduled Meetings</h3>
                 
               </div>
             </div>
@@ -200,21 +200,21 @@
                 <div class="rounded-full inline-flex mr-3 ">
                    
                 </div>
-                <span class="text-lg  text-cyan-400 font-semibold">Name </span>
+                <span class="text-lg  text-cyan-400 font-semibold">Title </span>
               </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center text-cyan-400 font-semibold">
                 <div class="bg-orange h-2 rounded-full flex-grow mr-2"></div>
-                Surname
+          Location
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
                   <div class="text-center text-cyan-400 font-semibold">
-                    City
+                    Date
                   </div>
                 </div>
                 <div class="w-1/2 px-4">
                   <div class="text-center text-cyan-400 text-grey font-semibold">
-                    ID
+                    Status
                   </div>
                 </div>
               </div>
@@ -223,51 +223,52 @@
 
             <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b border-1  -mx-4">
                 <div class="w-28 px-4 mr-4 flex items-center ">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <i class="fas fa-handshake text-cyan-400"></i>
+
                     <div class="rounded-full bg-orange inline-flex mr-3">
                        
                     </div>
-                    <span class="">Filan </span>
+                    <span class="">Client Meeting  </span>
                   </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
                 <div class="bg-grey h-2 w-2 rounded-full mr-2"></div>
-                Fisteku
+                Prizren
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
                   <div class="text-center">
-                    Prizren
+                    27/01/2024
                   </div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-center text-grey">
-                    123456
-                  </div>
+                    <div class="text-center text-cyan-400">
+                      <i class="fas fa-check"></i>
+                    </div>
                 </div>
               </div>
             </div>
             
             <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
                 <div class="w-28 px-4 mr-4 flex items-center ">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <i class="fas fa-handshake text-cyan-400"></i>
                     <div class="rounded-full bg-orange inline-flex mr-3">
                        
                     </div>
-                    <span class="">Filan </span>
+                    <span class="">Client Meeting </span>
                   </div>
               <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
                 <div class="bg-grey h-2 w-2 rounded-full mr-2"></div>
-                Fisteku
+                Prizen
               </div>
               <div class="flex w-3/5 md:w/12">
                 <div class="w-1/2 px-4">
                   <div class="text-center">
-                    Prizren
+                    27/01/2024
                   </div>
                 </div>
                 <div class="w-1/2 px-4">
-                  <div class="text-center text-grey">
-                    123456
+                  <div class="text-center text-error">
+                    <i class="fas fa-exclamation-circle"></i>
                   </div>
                 </div>
               </div>
@@ -283,19 +284,19 @@
           <div class="bg-neutral-900   rounded-lg shadow">
             <div class="border-b">
               <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-cyan-400 py-4 font-bold text-lg">My Account</h3>
+                <h3 class="text-cyan-400 py-4 font-bold text-lg">My Firm</h3>
               </div>
             </div>
             <div>
               <div class="text-center px-6 py-4">
                 <div class="py-8">
                   <div class="mb-4 text-center justify-center flex">
-                    <img src="{{URL('images/pic.png')}}" class="h-20" alt="">
+                    <img src="{{URL('images/firmicon.png')}}" class="h-20" alt="">
                   </div>
-                  <p class="text-2xl text-cyan-400 font-bold mb-2">Filan Fisteku</p>
+                  <p class="text-2xl text-cyan-400 font-bold mb-2">Law Firm</p>
                   <div class="flex justify-center ">
                     <svg class="h-4 mt-2"  fill="#00a3a9" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#00a3a9"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,1a11,11,0,0,0,0,22,1,1,0,0,0,0-2,9,9,0,1,1,9-9v2.857a1.857,1.857,0,0,1-3.714,0V7.714a1,1,0,1,0-2,0v.179A5.234,5.234,0,0,0,12,6.714a5.286,5.286,0,1,0,3.465,9.245A3.847,3.847,0,0,0,23,14.857V12A11.013,11.013,0,0,0,12,1Zm0,14.286A3.286,3.286,0,1,1,15.286,12,3.29,3.29,0,0,1,12,15.286Z"></path></g></svg>
-                    <h1 class="m-1">filanfisteku</h1>
+                    <h1 class="m-1">lawfirm</h1>
                     
                     
 

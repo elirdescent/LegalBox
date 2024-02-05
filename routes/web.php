@@ -27,3 +27,4 @@ Route::view('loginrole', 'role');
 Route::view('dashboard','lawyerdash');
 Route::view('clients','clientlist');
 Route::view('cases' , 'legalcases');
+Route::view('firmdash','firmdashboard');

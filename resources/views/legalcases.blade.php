@@ -181,6 +181,22 @@
 
    <!-- Add Modal -->
 
+     <!-- Sign Out Modal -->
+
+     <input type="checkbox" id="my_modal_signout" class="modal-toggle" />
+     <div class="modal" role="dialog">
+       <div class="modal-box">
+         <h3 class="font-bold text-lg text-error">Warning!</h3>
+         <p class="py-4">Are you sure you want to Sign Out?</p>
+         <div class="modal-action">
+           <button class="btn text-error">Sign Out</button>
+           <label for="my_modal_signout" class="btn">Close</label>
+           
+         </div>
+       </div>
+     </div>
+<!-- Sign Out Modal -->
+
 
    
 </head>
@@ -206,7 +222,7 @@
 
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-file-contract mr-2"></i> Legal Cases</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-user mr-2 "></i>Clients</a>
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-error bg-opacity-30 transition ease-in-out duration-400 rounded-lg hover:text-error focus:text-neutral-900 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-right-from-bracket mr-1"></i> Sign Out</a>
+    <label for="my_modal_signout" class="hover:cursor-pointer block px-4 py-2 mt-2 text-sm font-semibold text-white bg-error bg-opacity-30 transition ease-in-out duration-400 rounded-lg hover:text-error focus:text-neutral-900 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-right-from-bracket mr-1"></i> Sign Out</label>
    
   </nav>
 </div>
