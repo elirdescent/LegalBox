@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/gradient.css') }}">
     <title>Role Selection</title>
     @vite('resources/css/app.css')
+     
 </head>
 
 <body class="background-radial-gradient flex w-full h-full items-center justify-center ">

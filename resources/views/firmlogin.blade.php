@@ -6,6 +6,7 @@
      <link rel="icon" type="image/x-icon" href="/images/elaw.png">
     <title>Law Firm </title>
     <link rel="stylesheet" href="{{asset('css/gradient.css')}}">
+    <link rel="icon" type="image/x-icon" href="/images/elaw.png">
     @vite('resources/css/app.css')
 </head>
 <body class="background-radial-gradient">

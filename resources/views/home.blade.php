@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <link rel="stylesheet" href="{{asset('css/gradient.css')}}">
+    <link rel="icon" type="image/x-icon" href="/images/elaw.png">
     @vite('resources/css/app.css')
 </head>
 <body class="background-radial-gradient ">
