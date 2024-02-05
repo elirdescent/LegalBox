@@ -54,7 +54,7 @@
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
                             clip-rule="evenodd" />
                     </svg>
-                        <input class="pl-2 outline-none border-none bg-base-100" type="text" name="" id="" placeholder="Username" />
+                        <input class="pl-2 outline-none border-none bg-base-100" type="text" name="" id="" placeholder="Surname" />
           </div>
           <div class="flex align-center ml-1 " >
                         <i class="fas fa-circle-exclamation text-error mt-0.5"></i>                    

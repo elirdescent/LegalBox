@@ -9,6 +9,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
      @vite('resources/css/app.css')
+     <!-- Edit Modal -->
+
+
+
+
+          <input type="checkbox" id="my_modal_edit" class="modal-toggle" />
+          <div class="modal" role="dialog">
+            <div class="modal-box">
+              <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Edit Profile</span></h2>
+              <form action="" method="POST" class="grid grid-cols-1 gap-4">
+                <div class="mb-4">
+                    <label for="title" class="text-blue-300">Name</label>
+                    <br>
+                    <input type="text" id="name" name="title" value=""
+                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                </div>
+                <div class="mb-6">
+                    <label for="name" class="text-blue-300">Surname</label>
+                    <br>
+                    <input type="text" id="surname" name="surname" value=""
+                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                </div>
+                <div class="mb-6">
+                    <label for="surname" class="text-blue-300">Username</label>
+                    <br>
+                    <input type="text" id="username" name="surname" value=""
+                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                </div>
+                <div class="mb-6">
+                    <label for="task_description" class="text-blue-300">Location</label>
+                    <br>
+                    <input type="text" id="location" name="location" value=""
+                        class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                </div>
+          
+               <div class="mb-6">
+                    <label for="task_description" class="text-blue-300">Password</label>
+                    <br>
+                    <input type="text" id="password" name="password" value=""
+                        class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                </div>
+          
+                <div class="flex items-center justify-between ">
+                    <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
+                    </button>
+                    <div class="modal-action">
+                      <label for="my_modal_edit" class="btn mb-4 text-error">Close</label>
+                    </div>
+                </div>
+            </form>
+              
+            </div>
+          </div>
+            
+            
+
+  
+     <!-- EditModal -->
+     <!-- Sign Out Modal -->
+
+            <input type="checkbox" id="my_modal_signout" class="modal-toggle" />
+          <div class="modal" role="dialog">
+            <div class="modal-box">
+              <h3 class="font-bold text-lg text-error">Warning!</h3>
+              <p class="py-4">Are you sure you want to Sign Out?</p>
+              <div class="modal-action">
+                <button class="btn text-error">Sign Out</button>
+                <label for="my_modal_signout" class="btn">Close</label>
+                
+              </div>
+            </div>
+          </div>
+     <!-- Delete Modal -->
 </head>
 <body class>
 
@@ -34,7 +107,7 @@
     
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-file-contract mr-2"></i> Legal Cases</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-user mr-2"></i>Clients</a>
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-error bg-opacity-30 transition ease-in-out duration-400 rounded-lg hover:text-error focus:text-neutral-900 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-right-from-bracket mr-1"></i> Sign Out</a>
+    <label for="my_modal_signout" class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-error bg-opacity-30 transition ease-in-out duration-400 rounded-lg hover:text-error focus:text-neutral-900 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-right-from-bracket mr-1"></i> Sign Out</label>
    
   </nav>
 </div>
@@ -236,7 +309,7 @@
                   </div>
      
                   <div>
-                    <button class="btn btn-md bg-neutral-800 hover:shadow-lg border-none text-cyan-400">Edit Profile</button>
+                    <label for="my_modal_edit" class="btn btn-md bg-neutral-800 hover:shadow-lg border-none text-cyan-400">Edit Profile</label>
                   </div>
                 </div>
               </div>
