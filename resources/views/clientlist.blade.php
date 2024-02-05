@@ -55,12 +55,7 @@
             <div class="modal-box">
               <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Edit Client Info</span></h2>
               <form action="" method="POST" class="grid grid-cols-1 gap-4">
-                <div class="mb-4">
-                    <label for="title" class="text-blue-300">Case Title</label>
-                    <br>
-                    <input type="text" id="title" name="title" value=""
-                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-                </div>
+                
                 <div class="mb-6">
                     <label for="name" class="text-blue-300">Client Name</label>
                     <br>
@@ -74,18 +69,29 @@
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="task_description" class="text-blue-300">Case ID</label>
+                    <label for="task_description" class="text-blue-300">Client ID</label>
                     <br>
                     <input type="text" id="task_description" name="task_description" value=""
                         class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
-          
+
                 <div class="mb-6">
-                    <label for="case_progress" class="text-blue-300">Case Progress</label>
-                    <br>
-                    <input type="number" id="case_progress" value="" placeholder="" name="case_progress" min="0" max="100"
-                        class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-                </div>
+                  <label for="task_description" class="text-blue-300">Charge</label>
+                  <br>
+                  <input type="text" id="charge" name="charge" value=""
+                      class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+              </div>
+
+              <div class="mb-6">
+                <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Charge Description</label>
+                <br>
+                <textarea type="pargraph" id="case_description" name="case_description" value=""
+                    class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+              </textarea>
+            </div>
+        
+          
+              
           
                 <div class="flex items-center justify-between ">
                     <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
@@ -129,12 +135,7 @@
         <div class="modal-box">
           <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Add a Client</span></h2>
           <form action="" method="POST" class="grid grid-cols-1 gap-4">
-            <div class="mb-4">
-                <label for="title" class="text-blue-300">Case Title</label>
-                <br>
-                <input type="text" id="title" name="title" value=""
-                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-            </div>
+            
             <div class="mb-6">
                 <label for="name" class="text-blue-300">Client Name</label>
                 <br>
@@ -148,21 +149,34 @@
                     class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
             <div class="mb-6">
-                <label for="task_description" class="text-blue-300">Case ID</label>
+                <label for="task_description" class="text-blue-300">Client ID</label>
                 <br>
                 <input type="text" id="task_description" name="task_description" value=""
                     class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
-      
+
             <div class="mb-6">
-                <label for="case_progress" class="text-blue-300">Case Progress</label>
-                <br>
-                <input type="number" id="case_progress" value="" placeholder="" name="case_progress" min="0" max="100"
-                    class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-            </div>
+              <label for="task_description" class="text-blue-300">Charge</label>
+              <br>
+              <input type="text" id="charge" name="charge" value=""
+                  class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+          </div>
+
+          <div class="mb-6">
+            <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Charge Description</label>
+            <br>
+            <textarea type="pargraph" id="case_description" name="case_description" value=""
+                class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+          </textarea>
+        </div>
+    
+      
+          
       
             <div class="flex items-center justify-between ">
-                <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
+              
+                <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">
+                  <i class="fas fa-user-plus"></i>Add Client
                 </button>
                 <div class="modal-action">
                   <label for="my_modal_add" class="btn mb-4 text-error">Close</label>
@@ -198,10 +212,12 @@
       </button>
     </div>
     <nav :class="{'block': open, 'hidden': !open}" class=" flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#">Blog</a>
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#">Portfolio</a>
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#">About</a>
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:text-neutral bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#">Contact</a>
+      <div>
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-home mr-2 "></i>Home</a>
+      
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#">Legal Cases</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#">Clients</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:text-neutral bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#">Sign Out</a>
      
     </nav>
   </div>
@@ -226,7 +242,7 @@
                 <tr class="text-md font-semibold bg-neutral-900  text-cyan-400 tracking-wide text-left s bg-gray-100 uppercase  border-gray-600">
                   <th class="px-4 py-3">Name</th>
                   <th class="px-4 py-3">ID</th>
-                  <th class="px-4 py-3">Case</th>
+                  <th class="px-4 py-3">Charge</th>
                   <th colspan="3"></th>
 
                  
@@ -242,7 +258,7 @@
                     <td class="px-4 py-3 border-r-1">
                       <div class="flex items-center text-sm">
                         <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                          <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                          <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                           <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                         </div>
                         <div>
@@ -265,12 +281,14 @@
                   </tr>
                     <!-- TABLE CELL !-->
 
-                      <!-- TABLE CELL !-->
+                     
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -293,12 +311,14 @@
                 </tr>
                   <!-- TABLE CELL !-->
 
-                    <!-- TABLE CELL !-->
+
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -321,12 +341,14 @@
                 </tr>
                   <!-- TABLE CELL !-->
 
-                    <!-- TABLE CELL !-->
+
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -349,12 +371,14 @@
                 </tr>
                   <!-- TABLE CELL !-->
 
-                    <!-- TABLE CELL !-->
+
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -377,12 +401,14 @@
                 </tr>
                   <!-- TABLE CELL !-->
 
-                    <!-- TABLE CELL !-->
+
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -405,12 +431,14 @@
                 </tr>
                   <!-- TABLE CELL !-->
 
-                    <!-- TABLE CELL !-->
+
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -433,12 +461,14 @@
                 </tr>
                   <!-- TABLE CELL !-->
 
-                    <!-- TABLE CELL !-->
+
+
+                   <!-- TABLE CELL !-->
                 <tr class="text-gray-700 border-b-2 border-cyan-600 border-opacity-25">
                   <td class="px-4 py-3 border-r-1">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
+                        <img class="object-cover  rounded-full" src="{{URL('images/pic.png')}}" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
@@ -460,7 +490,6 @@
                   <td class=" py-3 text-sm "><label for="my_modal_delete" class="btn btn-sm rounded-full"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label></td>
                 </tr>
                   <!-- TABLE CELL !-->
-
                   
 
                     

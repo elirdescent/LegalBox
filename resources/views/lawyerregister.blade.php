@@ -26,7 +26,7 @@
             <div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
             <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
         </div>
-        <div class="flex md:w-1/2 justify-center py-10 items-center">
+        <div class="flex md:w-1/2 justify-center py-10 px-10 items-center">
             <form class="">
                 <h1 class="text-white font-bold text-2xl mb-1">Register as a <span class="text-cyan-400">Lawyer</span> </h1> 
                 <p class="text-sm font-normal text-white mb-7">Welcome Back</p>

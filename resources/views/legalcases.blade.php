@@ -152,7 +152,7 @@
             <div class="mb-6">
                 <label for="task_description" class="text-blue-300">Case ID</label>
                 <br>
-                <input type="text" id="task_description" name="task_description" value=""
+                <input type="text" id="case_id" name="case_id" value=""
                     class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
       
