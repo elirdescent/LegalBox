@@ -156,7 +156,7 @@
                 
               </div>
               <div class="text-sm uppercase text-grey tracking-wide">
-                Scheduled Meetings
+                Scheduled Meetings 
               </div>
             </div>
           </div>
