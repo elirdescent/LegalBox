@@ -30,3 +30,4 @@ Route::view('cases' , 'legalcases');
 Route::view('firmdash','firmdashboard');
 Route::view('meetings', 'scheduledmeetingsdash');
 Route::view('lawyer', 'lawyerlist');
+
