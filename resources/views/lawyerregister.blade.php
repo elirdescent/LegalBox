@@ -149,10 +149,7 @@
                             // Registration failed, handle accordingly
                         }
                     })
-                    .catch(error => {
-                        console.error(error);
-                        // Handle registration error
-                    });
+                    
                 });
             </script>
         </div>
