@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::view('register','lawyerregister');
 
-//Test Comment
+
 
 Route::post('/lawyerregister', [LawyerAuthController::class, 'register'])->name('lawyer.register');
 Route::post('/lawyerlogin', [LawyerAuthController::class, 'login'])->name('lawyer.login');
