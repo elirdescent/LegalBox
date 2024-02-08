@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('products', ProductController::class);
 
 // Public routes
-Route::view('/register','register');
+Route::view('register','lawyerregister');
 
 
 
