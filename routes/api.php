@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LawyerAuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
@@ -22,12 +23,15 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::post('/lawyerregister', [LawyerAuthController::class, 'register']);
+Route::post('/lawyerlogin', [LawyerAuthController::class, 'login']);
+
 
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout']);
 });
 
 
