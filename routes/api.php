@@ -20,18 +20,24 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('products', ProductController::class);
 
 // Public routes
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::view('/register','register');
 
-Route::post('/lawyerregister', [LawyerAuthController::class, 'register']);
-Route::post('/lawyerlogin', [LawyerAuthController::class, 'login']);
+
+
+Route::post('/lawyerregister', [LawyerAuthController::class, 'register'])->name('lawyer.register');
+Route::post('/lawyerlogin', [LawyerAuthController::class, 'login'])->name('lawyer.login');
+
+Route::view('login', 'lawyerlogin');
+Route::view('dashboard','lawyerdash')->name('dashboard');
+
+Route::view('home','home')->name('home');
 
 
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
-    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout']);
+    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
 });
 
 

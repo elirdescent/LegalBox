@@ -15,8 +15,10 @@ class LawyerAuthController extends Controller
             'surname' => 'required|string',
             'username' => 'required|string',
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string'
-        ]);
+            'password' => 'required'
+        ],
+    
+    );
 
         $lawyer = Lawyer::create([
             'name' => $fields['name'],

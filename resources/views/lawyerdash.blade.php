@@ -77,7 +77,7 @@
               <h3 class="font-bold text-lg text-error">Warning!</h3>
               <p class="py-4">Are you sure you want to Sign Out?</p>
               <div class="modal-action">
-                <button class="btn text-error">Sign Out</button>
+                <button class="btn text-error" id="logoutButton" method="POST" >Sign Out</button>
                 <label for="my_modal_signout" class="btn">Close</label>
                 
               </div>
@@ -328,4 +328,31 @@
 
     
 </body>
+
+<script>
+  // Assuming you have a logout button with id 'logoutButton'
+document.getElementById('logoutButton').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Send logout request to the Laravel backend
+    fetch("{{ route('lawyer.logout') }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+        },
+    })
+    .then(response => {
+        // Assuming the logout endpoint returns a 204 No Content status on success
+       
+            // Logout successful, redirect to the home page
+            window.location.href = "{{ route('home') }}";
+       
+    })
+    .catch(error => {
+        console.error(error);
+        // Handle logout error
+    });
+});
+</script>
 </html>
