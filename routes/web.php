@@ -22,8 +22,8 @@ Route::view('/home','home');
 Route::view('/homePage','index');
 Route::view('login', 'lawyerlogin');
 Route::view('firmlogin', 'firmlogin');
+Route::view('register','lawyerregister');
 
-Route::view('firmregister','firmregister');
 Route::view('loginrole', 'role');
 Route::view('dashboard','lawyerdash');
 Route::view('clients','clientlist');
@@ -31,6 +31,10 @@ Route::view('cases' , 'legalcases');
 Route::view('firmdash','firmdashboard');
 Route::view('meetings', 'scheduledmeetingsdash');
 Route::view('lawyer', 'lawyerlist')->name('lawyer');
+
+Route::get('/firmregister', function () {
+    return view('firmregister');
+});
 
 
 

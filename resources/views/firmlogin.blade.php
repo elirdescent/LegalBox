@@ -32,7 +32,8 @@
           
             <div class="mb-4 ">
               
-              
+              <form action="" id="loginForm">
+                @csrf
               <h3 class="font-semibold text-2xl text-white">Sign In </h3>
               <p class="text-gray-500 ">Please sign in to your account.</p>
             </div>
@@ -47,13 +48,13 @@
                         <div class="space-y-2">
                               <label class="text-sm font-medium text-white tracking-wide">Email</label>
                               
-              <input class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-cyan-400" type="" placeholder="mail@gmail.com">
+              <input class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-cyan-400" type="email" name="email" id="email" placeholder="mail@gmail.com">
               </div>
                           <div class="space-y-2">
               <label class="mb-5 text-sm font-medium text-white tracking-wide">
                 Password
               </label>
-              <input class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-cyan-400" type="" placeholder="Enter your password">
+              <input class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-cyan-400" type="password" name="password" id="password" placeholder="Enter your password">
             </div>
               <div class="flex items-center justify-between">
               
@@ -65,7 +66,36 @@
               </button>
             </div>
             </div>
-            
+            </form>
+             <script>
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                // Collect form data
+                var formData = new FormData(this);
+        
+                // Send login request to the Laravel backend
+                fetch("{{ route('lawfirm.login') }}", {
+                    method: "POST",
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+        
+                    // Handle login response as needed
+                    if (data.token) {
+                      window.location.href = "{{ route('firmdashboard') }}";
+                    } else {
+                        // Login failed, handle accordingly
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    // Handle login error
+                });
+            });
+        </script>
         </div>
       </div>
   </div>
