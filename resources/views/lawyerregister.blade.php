@@ -55,7 +55,6 @@
                 </div>
               
                 <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-                    
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" viewBox="0 0 20 20"
                         fill="currentColor">
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
@@ -126,35 +125,43 @@
                                
             </form>
 
-            <script>
-                document.getElementById('registerForm').addEventListener('submit', function (e) {
-                    e.preventDefault();
-            
-                    // Collect form data
-                    var formData = new FormData(this);
-            
-                    // Send registration request to the Laravel backend
-                    fetch("{{ route('lawyer.register') }}", {
-                        method: "POST",
-                        body: formData,
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-            
-                        // Handle registration response as needed
-                        if (data.token) {
-                            document.getElementById('successMessage').innerText = "Registration successful! ";
-                        } else {
-                            // Registration failed, handle accordingly
-                        }
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        // Handle registration error
-                    });
-                });
-            </script>
+           <script>
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Collect form data
+        var formData = new FormData(this);
+
+        // Send registration request to the Laravel backend
+        fetch("{{ route('lawyer.register') }}", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => {
+            // Check if the response has a JSON content type
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Expected JSON response, but received non-JSON content');
+            }
+
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+
+            // Handle registration response as needed
+            if (data.token) {
+                document.getElementById('successMessage').innerText = "Registration successful! ";
+            } else {
+                // Registration failed, handle accordingly
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            // Handle registration error
+        });
+    });
+</script>
         </div>
     </div>
 </body>
