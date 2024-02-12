@@ -22,7 +22,7 @@
                 <img src="{{URL('images/legalboxteal.png')}}" alt="" class="h-20">
             </div>
             
-                <p class="text-white mt-1">The most popular peer to peer lending at SEA</p>
+                <p class="text-white mt-1 text-wrap">Register as a Lawyer to manage your clients and legal procedures.</p>
            
             </div>
             <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
@@ -38,21 +38,20 @@
             
                 
            
-            <form  class="" id="registerForm" >
+            <form  class=" lg:w-1/2" id="registerForm" >
                 @csrf
 
-                <div role="alert" class="alert bg- border-none  ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span id="successMessage"></span>
-                  </div>
+           
+                <div class="inline-block">
+                    <h1 id="failMessage" class="font-semibold text-error animate-pulse animate-infinite"></h1>
+                    <h1 id="successMessage" class="font-semibold text-success animate-pulse animate-infinite"></h1>
+                </div>
+                 
 
                 <h1 class="text-white font-bold text-2xl mb-1">Register as a <span class="text-cyan-400">Lawyer</span> </h1> 
-                <p class="text-sm font-normal text-white mb-7">Welcome Back</p>
+                <p class="text-sm font-normal text-white mb-7">Already registered? <a href="{{URL('login')}}" class="underline text-cyan-600 hover:text-cyan-400 duration-300"> Log in here.</a> </p>
               
-                <div class="flex align-center ml-1 " >
-                        <i class="fas fa-circle-exclamation text-error mt-0.5"></i>                    
-                     <p class="text-sm font-normal ml-1 mb-2 text-error font-semibold">Name should only contain letters!</p>
-                </div>
+              
               
                 <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" viewBox="0 0 20 20"
@@ -64,10 +63,7 @@
                     
           </div>
          
-          <div class="flex align-center ml-1 " >
-                        <i class="fas fa-circle-exclamation text-error mt-0.5"></i>                    
-                     <p class="text-sm font-normal ml-1 mb-2 text-error font-semibold">Surname should only contain letters!</p>
-                </div>
+          
           
                     <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" viewBox="0 0 20 20"
@@ -78,10 +74,7 @@
                         <input class="pl-2 outline-none border-none bg-base-100" type="text" name="surname" id="surname" placeholder="Surname" required />
           </div>
      
-          <div class="flex align-center ml-1 " >
-                        <i class="fas fa-circle-exclamation text-error mt-0.5"></i>                    
-                     <p class="text-sm font-normal ml-1 mb-2 text-error font-semibold">Username should contain letters and numbers!</p>
-                </div>
+          
             
           <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" fill="none"
@@ -93,10 +86,7 @@
                         <input class="pl-2 outline-none border-none bg-base-100" type="text" name="username" id="username" placeholder="Username" required />
           </div>
           
-          <div class="flex align-center ml-1 " >
-                        <i class="fas fa-circle-exclamation text-error mt-0.5"></i>                    
-                     <p class="text-sm font-normal ml-1 mb-2 text-error font-semibold">Only valid emails allowed!</p>
-                </div>
+         
                 
                         <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" fill="none"
@@ -107,10 +97,7 @@
                             <input class="pl-2 outline-none border-none bg-base-100" type="email" name="email" id="email" placeholder="Email Address" required />
           </div>
           
-          <div class="flex align-center ml-1 " >
-                        <i class="fas fa-circle-exclamation text-error mt-0.5"></i>                    
-                     <p class="text-sm font-normal ml-1 mb-2 text-error font-semibold">Password should contain letters, numbers and symbols!</p>
-                </div>
+      
                 
                             <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" viewBox="0 0 20 20"
@@ -151,9 +138,10 @@
 
             // Handle registration response as needed
             if (data.token) {
-                document.getElementById('successMessage').innerText = "Registration successful! ";
+                document.getElementById('successMessage').innerText = "Successfully registered! ";
+                window.location.href = "{{ URL('login') }}";
             } else {
-                // Registration failed, handle accordingly
+                document.getElementById('failMessage').innerText = "Registration failed! Please check your information. ";
             }
         })
         .catch(error => {
