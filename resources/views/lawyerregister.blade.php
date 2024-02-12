@@ -23,6 +23,7 @@
             </div>
             
                 <p class="text-white mt-1 text-wrap">Register as a Lawyer to manage your clients and legal procedures.</p>
+                 <a href="{{URL('home')}}"><p class="underline">Back to Home Page</p></a>
            
             </div>
             <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>

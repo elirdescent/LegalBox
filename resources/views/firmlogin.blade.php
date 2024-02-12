@@ -40,9 +40,9 @@
             
             <div class="space-y-5">
               
-              <div class="bg-red-400 border border-red-400 text-white px-4 py-3 rounded-lg relative" role="alert">
-                <strong class="font-bold">Oops!</strong>
-                <span class="block sm:inline">Your email or password is incorrect.</span>
+              <div class="  text-white  rounded-lg relative" role="alert">
+              
+                <span class="block sm:inline text-error font-semibold animate-pulse animate-infinite" id="errorMessage"></span>
                
               </div>
                         <div class="space-y-2">
@@ -87,7 +87,7 @@
                     if (data.token) {
                       window.location.href = "{{ route('firmdashboard') }}";
                     } else {
-                        // Login failed, handle accordingly
+                       document.getElementById('errorMessage').innerText = "Invalid login data! ";
                     }
                 })
                 .catch(error => {
