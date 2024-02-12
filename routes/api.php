@@ -3,7 +3,9 @@
 use App\Http\Controllers\LawyerAuthController;
 use App\Http\Controllers\LawFirmAuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AuthController;
+use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,12 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 
 
+Route::resource('clients',ClientController::class);
+
+Route::get('/clients',[ClientController::class,'index']);
+Route::get('/clients/search/{name}',[ClientController::class,'search']);
+
+Route::post('/clients',[ClientController::class,'store']);
 
 
 Route::post('/lawyerregister', [LawyerAuthController::class, 'register'])->name('lawyer.register');
