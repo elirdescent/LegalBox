@@ -12,8 +12,10 @@ class ClientController extends Controller
      */
     public function index()
     {
-       return Client::all();
+        $clients = Client::all();
+        return view('clientlist', compact('clients'));
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -27,12 +29,13 @@ class ClientController extends Controller
             'job' => 'required',
             'description' => 'required',
             'lawyer_id' => 'required'
-
-
         ]);
 
-        return Client::create($request->all());
+        $client = Client::create($request->all());
+
+        return response()->json(['message' => 'Client added successfully', 'client' => $client], 201);
     }
+    
 
     /**
      * Display the specified resource.

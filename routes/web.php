@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LawyerAuthController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,11 +26,12 @@ Route::view('firmlogin', 'firmlogin');
 Route::view('register','lawyerregister')->name('register');
 Route::view('loginrole', 'role');
 Route::view('dashboard','lawyerdash');
-Route::view('clients','clientlist');
+Route::get('/clients',[ClientController::class,'index']);
 Route::view('cases' , 'legalcases');
 Route::view('firmdash','firmdashboard');
 Route::view('meetings', 'scheduledmeetingsdash');
 Route::view('lawyer', 'lawyerlist')->name('lawyer');
+Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
 
 Route::get('/firmregister', function () {
     return view('firmregister');

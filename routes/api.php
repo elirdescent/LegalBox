@@ -30,7 +30,9 @@ Route::resource('clients',ClientController::class);
 Route::get('/clients',[ClientController::class,'index']);
 Route::get('/clients/search/{name}',[ClientController::class,'search']);
 
-Route::post('/clients',[ClientController::class,'store']);
+
+
+Route::post('/clients',[ClientController::class,'store'])->name('clients.store');
 
 
 Route::post('/lawyerregister', [LawyerAuthController::class, 'register'])->name('lawyer.register');
