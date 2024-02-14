@@ -134,29 +134,37 @@
 
 
      <script>
-      function submitForm() {
-          // Get form data
-          const formData = new FormData(document.getElementById('addClientForm'));
+      document.getElementById('addClientForm').addEventListener('submit', function (e) {
+          e.preventDefault();
   
-          // Example fetch API request
+          // Collect form data
+          var formData = new FormData(this);
+  
+          // Send registration request to the Laravel backend
           fetch("{{ route('clients.store') }}", {
               method: "POST",
               body: formData,
-              headers: {
-                  'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-              },
           })
           .then(response => response.json())
           .then(data => {
-              // Handle success, e.g., show a success message or redirect
               console.log(data);
+  
+              // Handle registration response as needed
+              if (data.client) {
+                  alert("Client added successfully!"); // Display an alert for testing
+                  // Redirect to the clients page
+                  window.location.replace("{{ URL('clients') }}");
+              } else {
+                  alert("Client addition failed!"); // Display an alert for testing
+              }
           })
           .catch(error => {
-              // Handle error, e.g., show an error message
               console.error(error);
+              // Handle registration error
           });
-      }
+      });
   </script>
+  
 
       <!-- Add Modal -->
 

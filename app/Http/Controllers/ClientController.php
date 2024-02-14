@@ -33,7 +33,14 @@ class ClientController extends Controller
 
         $client = Client::create($request->all());
 
-        return response()->json(['message' => 'Client added successfully', 'client' => $client], 201);
+        $response = [
+            'client' => $client,
+            'message' => 'Client added successfully'
+        ];
+
+
+
+        return response()->json($response,201);
     }
     
 
