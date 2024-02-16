@@ -26,7 +26,7 @@
                 <h1 class="text-5xl text-cyan-400 font-bold">Car Theft</h1>
                 <div class="flex align-center ml-1">
                   <i class="fas fa-user text-white text-sm mt-1 mr-1"></i>
-                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> Filan Fisteku</h1>
+                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> Filani Fisteku</h1>
                 </div>
                 <div class="flex align-center ml-1 ">
                   <i class="fas fa-scale-balanced text-white text-sm mt-1 mr-1"></i>
