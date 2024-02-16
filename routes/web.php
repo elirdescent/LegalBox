@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::view('/home','home');
 Route::view('/homePage','index');
-Route::view('login', 'lawyerlogin');
+Route::view('login', 'lawyerlogin')->name('login');
 Route::view('firmlogin', 'firmlogin');
 Route::view('register','lawyerregister')->name('register');
 Route::view('loginrole', 'role');
