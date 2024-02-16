@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('legal_cases', function (Blueprint $table) {
             $table->id();
+            $table->integer('case_id');
+            $table->string('title');
             $table->timestamps();
         });
     }
