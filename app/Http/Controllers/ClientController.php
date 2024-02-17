@@ -32,15 +32,8 @@ class ClientController extends Controller
         ]);
 
         $client = Client::create($request->all());
-
-        $response = [
-            'client' => $client,
-            'message' => 'Client added successfully'
-        ];
-
-
-
-        return response()->json($response,201);
+        
+        return redirect(route('clients'), 201)->with(['success' => 'Client created successfully']);
     }
     
 
@@ -78,7 +71,9 @@ class ClientController extends Controller
     public function search($name)
     {
        $clients = Client::where('name','like','%'.$name.'%')->get();
+      
        return response()->json($clients);
+       
 
     }
 }

@@ -26,7 +26,7 @@ Route::view('firmlogin', 'firmlogin');
 Route::view('register','lawyerregister')->name('register');
 Route::view('loginrole', 'role');
 Route::view('dashboard','lawyerdash');
-Route::get('/clients',[ClientController::class,'index']);
+Route::get('/clients',[ClientController::class,'index'])->name('clients');
 Route::view('cases' , 'legalcases');
 Route::view('firmdash','firmdashboard');
 Route::view('meetings', 'scheduledmeetingsdash');
