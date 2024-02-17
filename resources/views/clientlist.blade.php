@@ -18,25 +18,22 @@
       <input type="checkbox" id="my_modal_view_{{$client->id}}" class="modal-toggle" />
       <div class="modal" role="dialog">
         <div class="modal-box w-11/12 max-w-5xl">
-          <div class="hero ">
-            <div class="hero-content flex-col lg:flex-row">
+          <div class="hero justify-start">
+            <div class="hero-content flex-col  lg:flex-row">
               <img src="{{URL('images/pic.png')}}" class="max-w-sm h-64 hidden lg:block" />
               <div>
-                <h1 class="text-md font-semibold text-gray-500 ml-1 "> 212258372</h1>
-                <h1 class="text-5xl text-cyan-400 font-bold">Filan Fisteku</h1>
+                <h1 class="text-md font-semibold text-gray-500 ml-1 ">{{$client->caseid}}</h1>
+                <h1 class="text-5xl text-cyan-400 font-bold">{{$client->name}} {{$client->surname}}</h1>
                 <div class="flex align-center ml-1">
                   <i class="fas fa-briefcase text-white text-sm mt-1 mr-1"></i>
-                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> Developer</h1>
+                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> {{$client->job}}</h1>
                 </div>
-                <div class="flex align-center ml-1 ">
-                  <i class="fas fa-scale-balanced text-white text-sm mt-1 mr-1"></i>
-                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> Civil Law</h1>
-                </div>
+             
 
                 
                
                 
-                <p class="py-6">The car theft legal case under scrutiny involves the illicit acquisition of a technologically advanced Velocity Vortex sports car. Forensic analyses, including examination of altered vehicle identification numbers and surveillance footage, are integral to establishing the meticulous planning of the theft</p>
+                <p class="py-6">{{$client->description}}</p>
                
               </div>
             </div>
@@ -122,7 +119,12 @@
               <h3 class="font-bold text-lg text-error">Warning!</h3>
               <p class="py-4">Deleted cases cannot be returned.</p>
               <div class="modal-action">
-                <button class="btn text-error">Delete</button>
+                <form method="POST" action="{{ route('clients.delete', $client->id) }}">
+                  @csrf
+                  @method('DELETE')
+              
+                <button class="btn text-error" type="submit">Delete</button>
+                </form>
                 <label for="my_modal_delete_{{$client->id}}" class="btn">Close</label>
                 
               </div>
@@ -306,7 +308,7 @@
                 <tr class="text-md font-semibold bg-neutral-900  text-cyan-400 tracking-wide text-left s bg-gray-100 uppercase  border-gray-600">
                   <th class="px-4 py-3">Name</th>
                   <th class="px-4 py-3">ID</th>
-                  <th class="px-4 py-3">Charge</th>
+                  <th class="px-4 py-3">Job</th>
                   <th colspan="3"></th>
 
                  
@@ -327,7 +329,7 @@
                         </div>
                         <div>
                           <p class="font-semibold text-gray-300">{{$client->name}} {{$client->surname}}</p>
-                          <p class="text-xs text-gray-500">Developer</p>
+                          <p class="text-xs text-gray-500">Client</p>
                         </div>
                       </div>
                     </td>

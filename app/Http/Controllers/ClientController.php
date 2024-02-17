@@ -60,7 +60,10 @@ class ClientController extends Controller
      */
     public function destroy(string $id)
     {
-       return Client::destroy($id);
+        $post = Client::findOrFail($id);
+        $post->delete();
+
+        return redirect(route('clients'));
     }
 
 

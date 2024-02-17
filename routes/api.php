@@ -43,12 +43,17 @@ Route::view('home','home')->name('home');
 
 
 
+    Route::post('/clients/{id}',[ClientController::class,'destroy'])->name('clients.delete');
+    Route::resource('clients',ClientController::class);
+    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
+    Route::post('/lawfirmlogout', [LawFirmAuthController::class, 'logout'])->name('lawfirm.logout');
+
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
-    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
-    Route::post('/lawfirmlogout', [LawFirmAuthController::class, 'logout'])->name('lawfirm.logout');
-    Route::resource('clients',ClientController::class);
+
+   
+
 
 Route::get('/clients',[ClientController::class,'index']);
 Route::get('/clients/search/{name}',[ClientController::class,'search']);
