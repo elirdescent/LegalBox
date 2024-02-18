@@ -54,41 +54,51 @@
           <div class="modal" role="dialog">
             <div class="modal-box">
               <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Edit Client Info</span></h2>
-              <form action="" method="POST" class="grid grid-cols-1 gap-4">
-                @csrf
+              <form action="{{ route('clients.update', $client->id)}}" method="POST" class="grid grid-cols-1 gap-4">
+                @csrf  
+                @method('PUT')
                 <div class="mb-6">
                     <label for="name" class="text-blue-300">Client Name</label>
                     <br>
-                    <input type="text" id="name" name="name" value=""
+                    <input type="text" id="name" name="name" value="{{ old('name', $client->name) }}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
                     <label for="surname" class="text-blue-300">Client Surname</label>
                     <br>
-                    <input type="text" id="surname" name="surname" value=""
+                    <input type="text" id="surname" name="surname" value="{{ old('surname', $client->surname) }}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="task_description" class="text-blue-300">Client ID</label>
+                    <label for="caseid" class="text-blue-300">Client ID</label>
                     <br>
-                    <input type="text" id="task_description" name="task_description" value=""
+                    <input type="text" id="caseid" name="caseid" value="{{ old('caseid', $client->caseid) }}"
                         class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
 
                 <div class="mb-6">
-                  <label for="task_description" class="text-blue-300">Charge</label>
+                  <label for="job" class="text-blue-300">Job</label>
                   <br>
-                  <input type="text" id="charge" name="charge" value=""
+                  <input type="text" id="job" name="job" value="{{ old('job', $client->job) }}"
                       class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
               </div>
 
               <div class="mb-6">
-                <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Charge Description</label>
+                <label for="description"  class="text-blue-300">Charge Description</label>
                 <br>
-                <textarea type="pargraph" id="case_description" name="case_description" value=""
-                    class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+                <textarea id="description" name="description" class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+                  {{ old('description', $client->description) }}
               </textarea>
             </div>
+
+
+            <div class="mb-6">
+              <label for="description"  class="text-blue-300">Lawyer ID</label>
+              <br>
+              <input type="number" id="lawyer_id" name="lawyer_id" value="{{ old('lawyer_id', $client->lawyer_id) }}"
+                  class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+            </input>
+          </div>
         
           
               

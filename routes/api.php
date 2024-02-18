@@ -44,6 +44,7 @@ Route::view('home','home')->name('home');
 
 
     Route::post('/clients/{id}',[ClientController::class,'destroy'])->name('clients.delete');
+    Route::put('clients/{id}',[ClientController::class,'update'])->name('clients.update');
     Route::resource('clients',ClientController::class);
     Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
     Route::post('/lawfirmlogout', [LawFirmAuthController::class, 'logout'])->name('lawfirm.logout');
