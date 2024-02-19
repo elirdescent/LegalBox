@@ -92,13 +92,6 @@
             </div>
 
 
-            <div class="mb-6">
-              <label for="description"  class="text-blue-300">Lawyer ID</label>
-              <br>
-              <input type="number" id="lawyer_id" name="lawyer_id" value="{{ old('lawyer_id', $client->lawyer_id) }}"
-                  class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
-            </input>
-          </div>
         
           
               
@@ -220,12 +213,7 @@
           </textarea>
         </div>
 
-        <div class="mb-6">
-          <label for="task_description" class="text-blue-300">Lawyer ID</label>
-          <br>
-          <input type="text" id="lawyer_id" name="lawyer_id" value=""
-              class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-      </div>
+      
 
         
     

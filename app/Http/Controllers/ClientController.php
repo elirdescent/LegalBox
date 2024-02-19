@@ -34,7 +34,7 @@ class ClientController extends Controller
                 'surname' => 'required',
                 'job' => 'required',
                 'description' => 'required',
-                'lawyer_id' => 'required',
+                
             ]);
 
             $client = Client::create($request->all());

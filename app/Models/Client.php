@@ -16,6 +16,6 @@ class Client extends Model
         'surname',
         'job',
         'description',
-        'lawyer_id'
+        
     ];
 }
