@@ -76,8 +76,25 @@ class LegalCaseController extends Controller
      */
     public function destroy(string $id)
     {
-       
+        try {
+            $legalcases = LegalCase::findOrFail($id);
+            $legalcases->delete();
+
+            return redirect(route('clients'))->with('success', 'Case deleted successfully!');
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'Case not found'], 404);
+        } catch (QueryException $e) {
+            // Check for specific SQLSTATE error code indicating a constraint violation
+            if ($e->getCode() === '23000') {
+                return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
+            }
+
+            // If it's not an integrity constraint violation, you can handle it accordingly
+            // (e.g., log the error, return a generic error response, etc.)
+            return response()->json(['error' => 'Internal Server Error'], 500);
+        }
     }
+
 
 
    /**
