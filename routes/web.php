@@ -42,4 +42,4 @@ Route::get('/firmregister', function () {
 
 Route::get('/cases', [LegalCaseController::class,'index'])->name('cases');
 Route::post('/cases',[LegalCaseController::class,'store'])->name('legalcases.store');
-Route::post('/cases/{id}',[LegalCaseController::class,'destroy'])->name('cases.delete');
+Route::delete('/cases/{id}',[LegalCaseController::class,'destroy'])->name('cases.delete');

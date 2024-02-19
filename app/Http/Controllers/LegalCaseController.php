@@ -80,7 +80,7 @@ class LegalCaseController extends Controller
             $legalcases = LegalCase::findOrFail($id);
             $legalcases->delete();
 
-            return redirect(route('clients'))->with('success', 'Case deleted successfully!');
+            return redirect(route('cases'))->with('success', 'Case deleted successfully!');
         } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Case not found'], 404);
         } catch (QueryException $e) {
