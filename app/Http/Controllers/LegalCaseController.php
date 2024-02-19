@@ -4,24 +4,54 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\LegalCase;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Rule;
+use Illuminate\Database\QueryException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class ClientController extends Controller
+
+class LegalCaseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+         $legalcases = LegalCase::all();
+        return view('legalcases', compact('legalcases'));
     }
 
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+   public function store(Request $request)
     {
-        
+        try {
+            $request->validate([
+                'case_id' => 'required',
+                'title' => 'required',
+                'client' => 'required',
+                'category' => 'required',
+                'progress' => 'required',
+                
+            ]);
+
+            $legalcase = LegalCase::create($request->all());
+
+            return redirect(route('cases'), 201)->with(['success' => 'Case created successfully']);
+        } catch (ValidationException $e) {
+            return response()->json(['error' => $e->validator->errors()], 400);
+        } catch (QueryException $e) {
+            // Check for specific SQLSTATE error code indicating a constraint violation
+            if ($e->getCode() === '23000') {
+                return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
+            }
+
+            // If it's not an integrity constraint violation, you can handle it accordingly
+            // (e.g., log the error, return a generic error response, etc.)
+            return response()->json(['error' => 'Internal Server Error'], 500);
+        }
     }
     
 

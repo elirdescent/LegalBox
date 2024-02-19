@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LawyerAuthController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\LegalCaseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,5 @@ Route::get('/firmregister', function () {
 
 
 
-
+Route::get('/cases', [LegalCaseController::class,'index'])->name('cases');
+Route::post('/cases',[LegalCaseController::class,'store'])->name('legalcases.store');
