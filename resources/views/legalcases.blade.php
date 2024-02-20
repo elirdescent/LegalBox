@@ -23,22 +23,21 @@
             <div class="hero-content flex-col lg:flex-row">
               <img src="{{URL('images/document.png')}}" class="max-w-sm h-64 hidden lg:block" />
               <div>
-                <h1 class="text-md font-semibold text-gray-500 ml-1 "> 212258372</h1>
-                <h1 class="text-5xl text-cyan-400 font-bold">Car Theft</h1>
+                <h1 class="text-md font-semibold text-gray-500 ml-1 "> {{$case->case_id}}</h1>
+                <h1 class="text-5xl text-cyan-400 font-bold">{{$case->title}}</h1>
                 <div class="flex align-center ml-1">
                   <i class="fas fa-user text-white text-sm mt-1 mr-1"></i>
-                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> Filani Fisteku</h1>
+                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> {{$case->client}}</h1>
                 </div>
                 <div class="flex align-center ml-1 ">
                   <i class="fas fa-scale-balanced text-white text-sm mt-1 mr-1"></i>
-                  <h1 class="text-xl font-semibold text-gray-500 ml-1 "> Civil Law</h1>
+                  <h1 class="text-xl font-semibold text-gray-500 ml-1 ">{{$case->category}}</h1>
                 </div>
 
                 
                
                 <progress class="progress progress-accent w-56" value="40" max="100"></progress> 
-                <p class="py-6">The car theft legal case under scrutiny involves the illicit acquisition of a technologically advanced Velocity Vortex sports car. Forensic analyses, including examination of altered vehicle identification numbers and surveillance footage, are integral to establishing the meticulous planning of the theft</p>
-               
+                   <p class="py-6">{{$case->description}}</p>
               </div>
             </div>
           </div>
@@ -58,38 +57,54 @@
           <div class="modal" role="dialog">
             <div class="modal-box">
               <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Edit Case</span></h2>
-              <form action="" method="POST" class="grid grid-cols-1 gap-4">
+              <form action="{{route('cases.update', $case->id)}}" method="POST" class="grid grid-cols-1 gap-4">
+                 @csrf  
+                @method('PUT')
                 <div class="mb-4">
-                    <label for="title" class="text-blue-300">Case Title</label>
+                    <label for="title" class="text-blue-300">Case ID</label>
                     <br>
-                    <input type="text" id="title" name="title" value=""
+                    <input type="text" id="case_id" name="case_id" value="{{ old('case_id', $case->case_id) }}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="name" class="text-blue-300">Client Name</label>
+                    <label for="name" class="text-blue-300">Client Title</label>
                     <br>
-                    <input type="text" id="name" name="name" value=""
+                    <input type="text" id="title" name="title" value="{{ old('title', $case->title) }}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="surname" class="text-blue-300">Client Surname</label>
+                    <label for="surname" class="text-blue-300">Client</label>
                     <br>
-                    <input type="text" id="surname" name="surname" value=""
+                    <input type="text" id="client" name="client" value="{{ old('client', $case->client) }}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="task_description" class="text-blue-300">Case ID</label>
+                    <label for="task_description" class="text-blue-300">Case Category</label>
                     <br>
-                    <input type="text" id="task_description" name="task_description" value=""
-                        class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                    
+                     <select name="category" class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" id="category">
+                <option value="Business Law">Business Law</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Criminal Defense">Criminal Defense</option>
+               </select>
                 </div>
           
-                <div class="mb-6">
-                    <label for="case_progress" class="text-blue-300">Case Progress</label>
-                    <br>
-                    <input type="number" id="case_progress" value="" placeholder="" name="case_progress" min="0" max="100"
-                        class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-                </div>
+                       <div class="mb-6">
+                <label for="case_progress" class="text-blue-300">Case Progress</label>
+                <br>
+                <div class="flex flex-col space-y-2 p-2 w-80">
+   <input type="number" id="progress" name="progress" value="{{ old('progress', $case->progress) }}"
+                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+ 
+</div>
+            </div>
+            <div class="mb-6">
+                <label for="description"  class="text-blue-300">Charge Description</label>
+                <br>
+                <textarea id="description" name="description" class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+                  {{ old('description', $case->description) }}
+              </textarea>
+            </div>
           
                 <div class="flex items-center justify-between ">
                     <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
@@ -176,7 +191,14 @@
  
 </div>
             </div>
-      
+        <div class="mb-6">
+                <label for="description"  class="text-blue-300">Charge Description</label>
+                <br>
+                <textarea id="description" name="description" class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+               
+              </textarea>
+            </div>
+          
             <div class="flex items-center justify-between ">
                 <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
                 </button>

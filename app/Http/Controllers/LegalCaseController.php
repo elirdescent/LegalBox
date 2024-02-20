@@ -68,8 +68,45 @@ class LegalCaseController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $legalcases = LegalCase::findOrFail($id);
+
+        try {
+            $this->validate($request, [
+                'case_id' => 'sometimes|required',
+                'title' => 'sometimes|required',
+                'client' => 'sometimes|required',
+                'category' => 'sometimes|required',
+                'progres' => 'sometimes|required',
+                'description' => 'sometimes|required',
+                'lawyer_id' => [
+                    'sometimes',
+                    Rule::requiredIf(function () use ($request) {
+                        // Additional logic to check if lawyer_id is required
+                        return !empty($request->input('name'));
+                    }),
+                ],
+            ]);
+
+            $legalcases->update($request->all());
+
+            return redirect()->route('cases')->with('success', 'Case updated successfully!');
+        } catch (ValidationException $e) {
+            return response()->json(['error' => $e->validator->errors()], 400);
+        } catch (QueryException $e) {
+            // Check for specific SQLSTATE error code indicating a constraint violation
+            if ($e->getCode() === '23000') {
+                return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
+            }
+
+            // If it's not an integrity constraint violation, you can handle it accordingly
+            // (e.g., log the error, return a generic error response, etc.)
+            return response()->json(['error' => 'Internal Server Error'], 500);
+        }
+    
      
+
     }
+
 
     /**
      * Remove the specified resource from storage.
