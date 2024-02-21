@@ -19,7 +19,7 @@
       <input type="checkbox" id="my_modal_view_{{$case->id}}" class="modal-toggle" />
       <div class="modal" role="dialog">
         <div class="modal-box w-11/12 max-w-5xl">
-          <div class="hero ">
+          <div class="hero flex justify-start ">
             <div class="hero-content flex-col lg:flex-row">
               <img src="{{URL('images/document.png')}}" class="max-w-sm h-64 hidden lg:block" />
               <div>
@@ -166,12 +166,15 @@
                 <input type="text" id="title" name="title" value=""
                     class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
-         <div class="mb-6">
-                <label for="name" class="text-blue-300">Client</label>
-                <br>
-                <input type="text" id="client" name="client" value=""
-                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-            </div>
+            <div class="mb-6">
+              <label for="task_description" class="text-blue-300">Client</label>
+              <br>
+             <select name="client" class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" id="client">
+              @foreach($clients as $client)
+              <option value="{{$client->name}} {{$client->surname}}">{{$client->name}} {{$client->surname}}</option>
+              @endforeach
+             </select>
+          </div>
             <div class="mb-6">
                 <label for="task_description" class="text-blue-300">Category</label>
                 <br>
@@ -290,9 +293,9 @@
 
 
                 <!-- Main Content -->
-        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
+        <div class="lg:flex gap-4 items-stretch bg-neutral-900">
             <!-- Legal Case -->
-            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
+            <div class="bg-neutral-900 flex md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
                 <div class="flex justify-center items-center space-x-5 h-full">
                   <img src="{{URL('images/document.png')}}" alt="wallet"
                         class="h-32 w-38">
@@ -321,7 +324,7 @@
                       <!-- Card 2 -->
                       <div
                       class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                      <div class="radial-progress bg-gray-800 text-cyan-400 border-primary" style="--value:40;" role="progressbar">{{$case->progress}}%</div>
+                      <div class="radial-progress bg-gray-800 text-cyan-400 border-primary" style="--value:{{$case->progress}};" role="progressbar">{{$case->progress}}%</div>
                   </div>
 
                     <!-- Card 3 -->

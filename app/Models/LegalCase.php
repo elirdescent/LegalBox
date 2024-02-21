@@ -16,6 +16,7 @@ class LegalCase extends Model
         'client',
         'category',
         'progress',
+        'description',
         
     ];
 }

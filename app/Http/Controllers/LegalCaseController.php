@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\LegalCase;
+use App\Models\Client;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Rule;
 use Illuminate\Database\QueryException;
@@ -18,7 +19,8 @@ class LegalCaseController extends Controller
     public function index()
     {
          $legalcases = LegalCase::all();
-        return view('legalcases', compact('legalcases'));
+         $clients = Client::all(); // Assuming you have a Client model
+        return view('legalcases', compact('legalcases','clients'));
     }
 
 
@@ -34,6 +36,7 @@ class LegalCaseController extends Controller
                 'client' => 'required',
                 'category' => 'required',
                 'progress' => 'required',
+                'description' => 'required',
                 
             ]);
 
