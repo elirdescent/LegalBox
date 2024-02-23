@@ -9,6 +9,18 @@
     <link rel="icon" type="image/x-icon" href="/images/elaw.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+
+    <script>
+
+const accessToken = localStorage.getItem('access_token');
+
+if (!accessToken) {
+    // Redirect to the login page if the access token is not found
+    window.location.href = "{{ route('login') }}";
+}
+    </script>
+    
      @vite('resources/css/app.css')
      <!-- Edit Modal -->
 
@@ -330,7 +342,6 @@
 </body>
 
 <script>
-  // Assuming you have a logout button with id 'logoutButton'
 document.getElementById('logoutButton').addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -344,10 +355,11 @@ document.getElementById('logoutButton').addEventListener('click', function (e) {
     })
     .then(response => {
         // Assuming the logout endpoint returns a 204 No Content status on success
-       
-            // Logout successful, redirect to the home page
-            window.location.href = "{{ route('home') }}";
-       
+        // Logout successful, redirect to the home page
+        window.location.href = "{{ route('home') }}";
+
+        // Delete the token from localStorage
+        localStorage.removeItem('access_token');
     })
     .catch(error => {
         console.error(error);

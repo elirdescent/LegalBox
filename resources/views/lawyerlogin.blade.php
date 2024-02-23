@@ -86,9 +86,13 @@
         
                     // Handle login response as needed
                     if (data.token) {
-                      window.location.href = "{{ URL('dashboard') }}";
+                        // Store the access token in localStorage
+                        localStorage.setItem('access_token', data.token);
+        
+                        // Redirect to the dashboard
+                        window.location.href = "{{ URL('dashboard') }}";
                     } else {
-                      document.getElementById('errorMessage').innerText = "Invalid login data! ";
+                        document.getElementById('errorMessage').innerText = "Invalid login data! ";
                     }
                 })
                 .catch(error => {

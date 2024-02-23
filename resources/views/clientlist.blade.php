@@ -12,6 +12,15 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
      @vite('resources/css/app.css')
 
+     <script>
+      const accessToken = localStorage.getItem('access_token');
+
+if (!accessToken) {
+    // Redirect to the login page if the access token is not found
+    window.location.href = "{{ route('login') }}";
+}
+     </script>
+
      @foreach($clients as $client)
  <!-- View Modal -->
 
