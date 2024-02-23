@@ -144,7 +144,7 @@ if (!accessToken) {
           </div>
   
      <!-- Delete Modal -->
-     @endforeach
+    
 
 
      <script>
@@ -251,22 +251,24 @@ if (!accessToken) {
 
      <!-- Sign Out Modal -->
 
-     <input type="checkbox" id="my_modal_signout" class="modal-toggle" />
-     <div class="modal" role="dialog">
-       <div class="modal-box">
-         <h3 class="font-bold text-lg text-error">Warning!</h3>
-         <p class="py-4">Are you sure you want to Sign Out?</p>
-         <div class="modal-action">
-           <button class="btn text-error">Sign Out</button>
-           <label for="my_modal_signout" class="btn">Close</label>
-           
-         </div>
-       </div>
-     </div>
+   
+    <input type="checkbox" id="my_modal_signout" class="modal-toggle" />
+          <div class="modal" role="dialog">
+            <div class="modal-box">
+              <h3 class="font-bold text-lg text-error">Warning!</h3>
+              <p class="py-4">Are you sure you want to Sign Out?</p>
+              <div class="modal-action">
+                <button class="btn text-error" id="logoutButton" method="POST" >Sign Out</button>
+                <label for="my_modal_signout" class="btn">Close</label>
+                
+              </div>
+            </div>
+          </div>
+     
 
 <!-- Sign Out Modal -->
 
-   
+    @endforeach
 </head>
 <body class>
 
