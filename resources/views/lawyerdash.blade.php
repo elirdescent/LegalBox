@@ -132,7 +132,7 @@ if (!accessToken) {
         
 
     <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8 p-4">
-        <h1 class="text-3xl ml-2 py-5 font-bold">Welcome back, <span class="text-cyan-400">User</span>!</h1>
+        <h1 class="text-3xl ml-2 py-5 font-bold">Welcome Back</h1>
       <div class="background-radial-gradient border-cyan-800  rounded-lg shadow mb-6">
         <div class="px-6">
           <div class="flex justify-between -mb-px">
@@ -149,7 +149,7 @@ if (!accessToken) {
           <div class="flex-grow flex-no-shrink py-6">
             <div class="text-cyan-400 mb-2">
               
-              <span class="text-5xl text-cyan-400">34</span>
+              <span class="text-5xl text-cyan-400">{{$totalCases}}</span>
             
             </div>
             <div class="text-green-light text-sm">
@@ -165,7 +165,7 @@ if (!accessToken) {
             <div class="border-r">
               <div class="text-grey-darker mb-2">
                 
-                <span class="text-5xl font-bold text-cyan-400">34</span>
+                <span class="text-5xl font-bold text-cyan-400">{{$totalClients}}</span>
                 
               </div>
               <div class="text-sm uppercase text-grey tracking-wide">
@@ -177,7 +177,7 @@ if (!accessToken) {
             <div class="border-r">
               <div class="text-grey-darker mb-2">
 
-                <span class="text-5xl font-bold text-cyan-400">12</span>
+                <span class="text-5xl font-bold text-cyan-400">{{$totalCases}}</span>
              
               </div>
               <div class="text-sm uppercase text-grey tracking-wide">
@@ -199,135 +199,100 @@ if (!accessToken) {
       </div>
       <div class="flex flex-wrap -mx-4">
         <div class="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
-          <div class="flex-grow flex flex-col bg-neutral-900  rounded-xl shadow overflow-hidden">
-            <div class="border-b-2 border-cyan-400">
-              <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-cyan-400 font-bold py-4  text-lg">Latest Clients</h3>
-                
-              </div>
-            </div>
-            <!-- CLIENT CELL !-->
-            <div class="flex-grow flex px-6  text-grey-darker items-center border-b  -mx-4">
-              <div class="w-28 ml-4 px-4 flex items-center ">
-                
-                <div class="rounded-full inline-flex mr-3 ">
-                   
-                </div>
-                <span class="text-lg  text-cyan-400 font-semibold">Name </span>
-              </div>
-              <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center text-cyan-400 font-semibold">
-                <div class="bg-orange h-2 rounded-full flex-grow mr-2"></div>
-                Surname
-              </div>
-              <div class="flex w-3/5 md:w/12">
-                <div class="w-1/2 px-4">
-                  <div class="text-center text-cyan-400 font-semibold">
-                    City
-                  </div>
-                </div>
-                <div class="w-1/2 px-4">
-                  <div class="text-center text-cyan-400 text-grey font-semibold">
-                    ID
-                  </div>
-                </div>
-              </div>
-            </div>
-                <!-- CLIENT CELL !-->
-
-            <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b border-1  -mx-4">
-                <div class="w-28 px-4 mr-4 flex items-center ">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    <div class="rounded-full bg-orange inline-flex mr-3">
-                       
-                    </div>
-                    <span class="">Filan </span>
-                  </div>
-              <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                <div class="bg-grey h-2 w-2 rounded-full mr-2"></div>
-                Fisteku
-              </div>
-              <div class="flex w-3/5 md:w/12">
-                <div class="w-1/2 px-4">
-                  <div class="text-center">
-                    Prizren
-                  </div>
-                </div>
-                <div class="w-1/2 px-4">
-                  <div class="text-center text-grey">
-                    123456
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
-                <div class="w-28 px-4 mr-4 flex items-center ">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    <div class="rounded-full bg-orange inline-flex mr-3">
-                       
-                    </div>
-                    <span class="">Filan </span>
-                  </div>
-              <div class="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                <div class="bg-grey h-2 w-2 rounded-full mr-2"></div>
-                Fisteku
-              </div>
-              <div class="flex w-3/5 md:w/12">
-                <div class="w-1/2 px-4">
-                  <div class="text-center">
-                    Prizren
-                  </div>
-                </div>
-                <div class="w-1/2 px-4">
-                  <div class="text-center text-grey">
-                    123456
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="px-6 py-4">
-              <div class="text-center text-grey">
+          <div class="overflow-x-auto">
+            <table class="table bg-neutral-900">
+              <!-- head -->
+              <thead class="text-cyan-400">
+                <tr>
                
-              </div>
-            </div>
+                  <th><h1 class="text-md">Latest Clients</h1></th>
+
+                </tr>
+                <tr>
+               
+                  <th>Name</th>
+                  <th>ID</th>
+           
+                  <th>Date Added</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+
+                @foreach($latestClients as $client)
+                <!-- row  -->
+                <tr class="font-bold">
+               
+                  <td>
+                    <div class=" ">
+                     
+                      <div>
+                        <div class="font-bold">{{$client->name}} {{$client->surname}}</div>
+                       
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                   {{$client->caseid}}
+                    <br/>
+                   
+                  </td>
+            
+                  <th>
+                     {{ $client->created_at->format('F j, Y') }}
+                  </th>
+                </tr>
+
+                @endforeach
+               
+              
+            </table>
           </div>
         </div>
         <div class="w-full lg:w-1/2 px-4">
-          <div class="bg-neutral-900   rounded-lg shadow">
-            <div class="border-b">
-              <div class="flex justify-between px-6 -mb-px">
-                <h3 class="text-cyan-400 py-4 font-bold text-lg">My Account</h3>
-              </div>
-            </div>
-            <div>
-              <div class="text-center px-6 py-4">
-                <div class="py-8">
-                  <div class="mb-4 text-center justify-center flex">
-                    <img src="{{URL('images/pic.png')}}" class="h-20" alt="">
-                  </div>
-                  <p class="text-2xl text-cyan-400 font-bold mb-2">Filan Fisteku</p>
-                  <div class="flex justify-center ">
-                    <svg class="h-4 mt-2"  fill="#00a3a9" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#00a3a9"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,1a11,11,0,0,0,0,22,1,1,0,0,0,0-2,9,9,0,1,1,9-9v2.857a1.857,1.857,0,0,1-3.714,0V7.714a1,1,0,1,0-2,0v.179A5.234,5.234,0,0,0,12,6.714a5.286,5.286,0,1,0,3.465,9.245A3.847,3.847,0,0,0,23,14.857V12A11.013,11.013,0,0,0,12,1Zm0,14.286A3.286,3.286,0,1,1,15.286,12,3.29,3.29,0,0,1,12,15.286Z"></path></g></svg>
-                    <h1 class="m-1">filanfisteku</h1>
-                    
-                    
+          <div class="overflow-x-auto">
+            <table class="table bg-neutral-900">
+              <!-- head -->
+              <thead class="text-cyan-400">
+                <tr>
+               
+                  <th><h1 class="text-md">Latest Cases</h1></th>
 
-                  </div>
-
-                  <div class="flex justify-center">
-                    <svg class="h-4 mt-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#00a3a9"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#00a3a9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="#00a3a9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    <h1 class="m-1">Prizren</h1>
-                    
-                    
-
-                  </div>
-     
-                  <div>
-                    <label for="my_modal_edit" class="btn btn-md bg-neutral-800 hover:shadow-lg border-none text-cyan-400">Edit Profile</label>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </tr>
+                <tr>
+               
+                  <th>Title</th>
+                  <th>Client</th>
+                  
+                  <th>Date Added</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($latestLegalCases as $case)
+                <!-- row 1 -->
+                <tr class="font-bold">
+               
+                  <td>
+                    <div class=" ">
+                     
+                      <div>
+                        <div class="font-bold">{{$case->title}}</div>
+                       
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                   {{$case->client}}
+                    <br/>
+                   
+                  </td>
+                  <td>{{ $case->created_at->format('F j, Y') }}</td>
+                  
+                </tr>
+               @endforeach
+              
+            </table>
           </div>
         </div>
       </div>

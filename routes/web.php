@@ -3,6 +3,7 @@
 use App\Http\Controllers\LawyerAuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LegalCaseController;
+use App\Http\Controllers\LawyerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,7 @@ Route::view('login', 'lawyerlogin')->name('login');
 Route::view('firmlogin', 'firmlogin');
 Route::view('register','lawyerregister')->name('register');
 Route::view('loginrole', 'role');
-Route::view('dashboard','lawyerdash');
+Route::get('dashboard',[LawyerController::class,'dashboard']);
 Route::get('/clients',[ClientController::class,'index'])->name('clients');
 Route::view('cases' , 'legalcases');
 Route::view('firmdash','firmdashboard');
