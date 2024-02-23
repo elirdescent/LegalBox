@@ -12,12 +12,11 @@
      
 </head>
 
-<body class="background-radial-gradient flex w-full h-full items-center justify-center ">
-    <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
-    
+<body class="background-radial-gradient flex w-full h-full items-center justify-center h-screen ">
+   
 
     <!-- Card Section -->
-    <div class=" mt-auto lg:mt-0 h-full">
+    <div class=" mt-auto lg:mt-0 h-full p-36">
         <div class="">
             <div class="justify-between  rounded-lg  lg:flex sm:flex-row mt-10">
                 <div class="mb-10 rounded-xl px-6 py-8 text-center bg-[hsla(0,0%,15%,0.9)] shadow-black/20 transition-colors duration-300 ease-in-out  lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12 m-2">
