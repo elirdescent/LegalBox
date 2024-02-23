@@ -136,7 +136,8 @@
       <div class="modal" role="dialog">
         <div class="modal-box">
           <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Schedule a Meeting</span></h2>
-          <form action="" method="POST" class="grid grid-cols-1 gap-4">
+          <form action="{{route('meetings.store')}}" method="POST" class="grid grid-cols-1 gap-4">
+              @csrf
             <div class="mb-4">
                 <label for="title" class="text-blue-300">Title</label>
                 <br>
@@ -146,26 +147,20 @@
             <div class="mb-6">
                 <label for="name" class="text-blue-300">Location</label>
                 <br>
-                <input type="text" id="name" name="name" value=""
-                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-            </div>
-            <div class="mb-6">
-                <label for="surname" class="text-blue-300">Date</label>
-                <br>
-                <input type="date" id="surname" name="surname" value=""
+                <input type="text" id="location" name="location" value=""
                     class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
             <div class="mb-6">
                 <label for="task_description" class="text-blue-300">Status</label>
                 <br>
-                <input type="text" id="case_id" name="case_id" value=""
+                <input type="text" id="status" name="status" value=""
                     class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
       
             <div class="mb-6">
                 <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Description</label>
                 <br>
-                <textarea type="pargraph" id="case_description" name="case_description" value=""
+                <textarea type="pargraph" id="description" name="description" value=""
                     class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
               </textarea>
             </div>
@@ -250,267 +245,76 @@
        <label for="my_modal_add" class="btn align-center mb-4 bg-neutral-900 text-cyan-400"> <i class="fas fa-handshake"></i>Schedule Meeting</label>
 
 
-  
-
-        <!-- Meeting CARD !-->
-
-        <div class="w-full mb-8 overflow-hidden rounded-lg ">
-          <div class="w-full overflow-x-auto">
-            
-            
-
-
-                <!-- Main Content -->
-        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
-            <!-- Meeting Card -->
-            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
-                <div class="flex justify-center items-center space-x-5 h-full">
-                  <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
-                        class="h-40 mr-0 lg:mr-10 w-38">
-                    <div>
-                      
-                       
-                      
-                        <h2 class="text-4xl font-bold text-gray-400">Car Theft</h2>
-                        <p class="text-cyan-400">212258372</p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <!-- Caja Blanca -->
-            <div class=" p-4 bg-neutral-900 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
-                <!-- Cajas pequeñas -->
-                <div class="flex flex-wrap justify-between h-full">
-                    <!-- Card 1 -->
-                    <div
-                        class="flex-1  to-cyan-900 rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                        <i class="fas fa-location-dot text-white text-4xl"></i>
-                        <p class="text-gray-400 font-bold">Prizren</p>
-                    </div>
-
-                      <!-- Card 2 -->
-                      <div
-                      class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                     <i class="fas fa-check-circle text-5xl text-green-500"></i>
-                  </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="flex-1    rounded-lg flex  items-center justify-center p-4 space-y-2  m-2">
-                        <div class="flex ">
-                          <label for="my_modal_view" class="btn btn-circle mr-2"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z" fill="#00ff40"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.83 11.2807C19.542 7.15186 15.8122 5 12 5C8.18777 5 4.45796 7.15186 2.17003 11.2807C1.94637 11.6844 1.94361 12.1821 2.16029 12.5876C4.41183 16.8013 8.1628 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807ZM12 17C9.06097 17 6.04052 15.3724 4.09173 11.9487C6.06862 8.59614 9.07319 7 12 7C14.9268 7 17.9314 8.59614 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z" fill="#00ff40"></path> </g></svg></label>
-                          <label for="my_modal_edit" class="mr-2 btn btn-circle rounded-full"><svg viewBox="0 0 24 24" fill="none" class="h-5" xmlns="http://www.w3.org/2000/svg" stroke="#ffc800"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          <label for="my_modal_6" class="btn btn-circle"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          
-                        </div>
-  
-                    </div>
-
-                  
-                </div>
-            </div>
-        </div>
-
-        </div>
-        </div>
-
-      <!-- Meeting Card !-->
-
-      <!-- Meeting CARD !-->
-
-        <div class="w-full mb-8 overflow-hidden rounded-lg ">
-          <div class="w-full overflow-x-auto">
-            
-            
-
-
-                <!-- Main Content -->
-        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
-            <!-- Meeting Card -->
-            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
-                <div class="flex justify-center items-center space-x-5 h-full">
-                  <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
-                        class="h-40 mr-0 lg:mr-10 w-38">
-                    <div>
-                      
-                       
-                      
-                        <h2 class="text-4xl font-bold text-gray-400">Car Theft</h2>
-                        <p class="text-cyan-400">212258372</p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <!-- Caja Blanca -->
-            <div class=" p-4 bg-neutral-900 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
-                <!-- Cajas pequeñas -->
-                <div class="flex flex-wrap justify-between h-full">
-                    <!-- Card 1 -->
-                    <div
-                        class="flex-1  to-cyan-900 rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                        <i class="fas fa-location-dot text-white text-4xl"></i>
-                        <p class="text-gray-400 font-bold">Prizren</p>
-                    </div>
-
-                      <!-- Card 2 -->
-                      <div
-                      class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                     <i class="fas fa-check-circle text-5xl text-green-500"></i>
-                  </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="flex-1    rounded-lg flex  items-center justify-center p-4 space-y-2  m-2">
-                        <div class="flex ">
-                          <label for="my_modal_view" class="btn btn-circle mr-2"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z" fill="#00ff40"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.83 11.2807C19.542 7.15186 15.8122 5 12 5C8.18777 5 4.45796 7.15186 2.17003 11.2807C1.94637 11.6844 1.94361 12.1821 2.16029 12.5876C4.41183 16.8013 8.1628 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807ZM12 17C9.06097 17 6.04052 15.3724 4.09173 11.9487C6.06862 8.59614 9.07319 7 12 7C14.9268 7 17.9314 8.59614 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z" fill="#00ff40"></path> </g></svg></label>
-                          <label for="my_modal_edit" class="mr-2 btn btn-circle rounded-full"><svg viewBox="0 0 24 24" fill="none" class="h-5" xmlns="http://www.w3.org/2000/svg" stroke="#ffc800"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          <label for="my_modal_6" class="btn btn-circle"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          
-                        </div>
-  
-                    </div>
-
-                  
-                </div>
-            </div>
-        </div>
-
-        </div>
-        </div>
-
-      <!-- Meeting Card !-->
-        <!-- Meeting CARD !-->
-
-        <div class="w-full mb-8 overflow-hidden rounded-lg ">
-          <div class="w-full overflow-x-auto">
-            
-            
-
-
-                <!-- Main Content -->
-        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
-            <!-- Meeting Card -->
-            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
-                <div class="flex justify-center items-center space-x-5 h-full">
-                  <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
-                        class="h-40 mr-0 lg:mr-10 w-38">
-                    <div>
-                      
-                       
-                      
-                        <h2 class="text-4xl font-bold text-gray-400">Car Theft</h2>
-                        <p class="text-cyan-400">212258372</p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <!-- Caja Blanca -->
-            <div class=" p-4 bg-neutral-900 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
-                <!-- Cajas pequeñas -->
-                <div class="flex flex-wrap justify-between h-full">
-                    <!-- Card 1 -->
-                    <div
-                        class="flex-1  to-cyan-900 rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                        <i class="fas fa-location-dot text-white text-4xl"></i>
-                        <p class="text-gray-400 font-bold">Prizren</p>
-                    </div>
-
-                      <!-- Card 2 -->
-                      <div
-                      class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                     <i class="fas fa-check-circle text-5xl text-green-500"></i>
-                  </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="flex-1    rounded-lg flex  items-center justify-center p-4 space-y-2  m-2">
-                        <div class="flex ">
-                          <label for="my_modal_view" class="btn btn-circle mr-2"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z" fill="#00ff40"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.83 11.2807C19.542 7.15186 15.8122 5 12 5C8.18777 5 4.45796 7.15186 2.17003 11.2807C1.94637 11.6844 1.94361 12.1821 2.16029 12.5876C4.41183 16.8013 8.1628 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807ZM12 17C9.06097 17 6.04052 15.3724 4.09173 11.9487C6.06862 8.59614 9.07319 7 12 7C14.9268 7 17.9314 8.59614 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z" fill="#00ff40"></path> </g></svg></label>
-                          <label for="my_modal_edit" class="mr-2 btn btn-circle rounded-full"><svg viewBox="0 0 24 24" fill="none" class="h-5" xmlns="http://www.w3.org/2000/svg" stroke="#ffc800"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          <label for="my_modal_6" class="btn btn-circle"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          
-                        </div>
-  
-                    </div>
-
-                  
-                </div>
-            </div>
-        </div>
-
-        </div>
-        </div>
-
-      <!-- Meeting Card !-->
-        <!-- Meeting CARD !-->
-
-        <div class="w-full mb-8 overflow-hidden rounded-lg ">
-          <div class="w-full overflow-x-auto">
-            
-            
-
-
-                <!-- Main Content -->
-        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
-            <!-- Meeting Card -->
-            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
-                <div class="flex justify-center items-center space-x-5 h-full">
-                  <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
-                        class="h-40 mr-0 lg:mr-10 w-38">
-                    <div>
-                      
-                       
-                      
-                        <h2 class="text-4xl font-bold text-gray-400">Car Theft</h2>
-                        <p class="text-cyan-400">212258372</p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <!-- Caja Blanca -->
-            <div class=" p-4 bg-neutral-900 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
-                <!-- Cajas pequeñas -->
-                <div class="flex flex-wrap justify-between h-full">
-                    <!-- Card 1 -->
-                    <div
-                        class="flex-1  to-cyan-900 rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                        <i class="fas fa-location-dot text-white text-4xl"></i>
-                        <p class="text-gray-400 font-bold">Prizren</p>
-                    </div>
-
-                      <!-- Card 2 -->
-                      <div
-                      class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                     <i class="fas fa-check-circle text-5xl text-green-500"></i>
-                  </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="flex-1    rounded-lg flex  items-center justify-center p-4 space-y-2  m-2">
-                        <div class="flex ">
-                          <label for="my_modal_view" class="btn btn-circle mr-2"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z" fill="#00ff40"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.83 11.2807C19.542 7.15186 15.8122 5 12 5C8.18777 5 4.45796 7.15186 2.17003 11.2807C1.94637 11.6844 1.94361 12.1821 2.16029 12.5876C4.41183 16.8013 8.1628 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807ZM12 17C9.06097 17 6.04052 15.3724 4.09173 11.9487C6.06862 8.59614 9.07319 7 12 7C14.9268 7 17.9314 8.59614 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z" fill="#00ff40"></path> </g></svg></label>
-                          <label for="my_modal_edit" class="mr-2 btn btn-circle rounded-full"><svg viewBox="0 0 24 24" fill="none" class="h-5" xmlns="http://www.w3.org/2000/svg" stroke="#ffc800"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          <label for="my_modal_6" class="btn btn-circle"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
-                          
-                        </div>
-  
-                    </div>
-
-                  
-                </div>
-            </div>
-        </div>
-
-        </div>
-        </div>
-
-      <!-- Meeting Card !-->
       
+        <!-- Meeting CARD !-->
+
+        <div class="w-full mb-8 overflow-hidden rounded-lg ">
+          <div class="w-full overflow-x-auto">
+            
+            
+
+
+                <!-- Main Content -->
+        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
+            <!-- Meeting Card -->
+            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
+                <div class="flex justify-center items-center space-x-5 h-full">
+                  <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
+                        class="h-40 mr-0 lg:mr-10 w-38">
+                    <div>
+                      
+                       
+                      
+                        <h2 class="text-4xl font-bold text-gray-400">Car Theft</h2>
+                        <p class="text-cyan-400">212258372</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Caja Blanca -->
+            <div class=" p-4 bg-neutral-900 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
+                <!-- Cajas pequeñas -->
+                <div class="flex flex-wrap justify-between h-full">
+                    <!-- Card 1 -->
+                    <div
+                        class="flex-1  to-cyan-900 rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
+                        <i class="fas fa-location-dot text-white text-4xl"></i>
+                        <p class="text-gray-400 font-bold">Prizren</p>
+                    </div>
+
+                      <!-- Card 2 -->
+                      <div
+                      class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
+                     <i class="fas fa-check-circle text-5xl text-green-500"></i>
+                  </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="flex-1    rounded-lg flex  items-center justify-center p-4 space-y-2  m-2">
+                        <div class="flex ">
+                          <label for="my_modal_view" class="btn btn-circle mr-2"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z" fill="#00ff40"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.83 11.2807C19.542 7.15186 15.8122 5 12 5C8.18777 5 4.45796 7.15186 2.17003 11.2807C1.94637 11.6844 1.94361 12.1821 2.16029 12.5876C4.41183 16.8013 8.1628 19 12 19C15.8372 19 19.5882 16.8013 21.8397 12.5876C22.0564 12.1821 22.0536 11.6844 21.83 11.2807ZM12 17C9.06097 17 6.04052 15.3724 4.09173 11.9487C6.06862 8.59614 9.07319 7 12 7C14.9268 7 17.9314 8.59614 19.9083 11.9487C17.9595 15.3724 14.939 17 12 17Z" fill="#00ff40"></path> </g></svg></label>
+                          <label for="my_modal_edit" class="mr-2 btn btn-circle rounded-full"><svg viewBox="0 0 24 24" fill="none" class="h-5" xmlns="http://www.w3.org/2000/svg" stroke="#ffc800"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#ffc800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
+                          <label for="my_modal_6" class="btn btn-circle"><svg viewBox="0 0 24 24" class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 12V17" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ff0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></label>
+                          
+                        </div>
+  
+                    </div>
+
+                  
+                </div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+      <!-- Meeting Card !-->
+
+
       
+     
+
 
         
       </section>

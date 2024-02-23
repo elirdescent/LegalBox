@@ -4,7 +4,9 @@ use App\Http\Controllers\LawyerAuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LegalCaseController;
 use App\Http\Controllers\LawyerController;
+use App\Http\Controllers\MeetingsController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +46,6 @@ Route::get('/firmregister', function () {
 Route::get('/cases', [LegalCaseController::class,'index'])->name('cases');
 Route::post('/cases',[LegalCaseController::class,'store'])->name('legalcases.store');
 Route::delete('/cases/{id}',[LegalCaseController::class,'destroy'])->name('cases.delete');
- Route::put('/cases/{id}',[LegalCaseController::class,'update'])->name('cases.update');
+Route::put('/cases/{id}',[LegalCaseController::class,'update'])->name('cases.update');
+
+Route::post('/meetings',[MeetingsController::class,'store'])->name('meetings.store');
