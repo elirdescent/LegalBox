@@ -73,7 +73,9 @@
           <div class="modal" role="dialog">
             <div class="modal-box">
               <h2 class="mb-4 text-4xl font-extrabold text-gray-900 text-white md:text-4xl lg:text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Edit Meeting Details</span></h2>
-              <form action="" method="POST" class="grid grid-cols-1 gap-4">
+              <form action="{{route('meetings.update', $meeting->id)}}" method="POST" class="grid grid-cols-1 gap-4">
+                   @csrf  
+                @method('PUT')
                 <div class="mb-4">
                     <label for="title" class="text-blue-300">Title</label>
                     <br>
@@ -83,30 +85,20 @@
                 <div class="mb-6">
                     <label for="name" class="text-blue-300">Location</label>
                     <br>
-                    <input type="text" id="name" name="name" value=""
+                    <input type="text" id="location" name="location" value=""
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
-                <div class="mb-6">
-                    <label for="surname" class="text-blue-300">Date</label>
-                    <br>
-                    <input type="date" id="surname" name="surname" value=""
-                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-                </div>
-               
-               
-          
-             
                   <div class="mb-6">
                 <label for="task_description" class="text-blue-300">Status</label>
                 <br>
-                <input type="text" id="case_id" name="case_id" value=""
+                <input type="text" id="status" name="status" value=""
                     class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
       
             <div class="mb-6">
                 <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Description</label>
                 <br>
-                <textarea type="pargraph" id="case_description" name="case_description" value=""
+                <textarea type="pargraph" id="description" name="description" value=""
                     class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
               </textarea>
             </div>
