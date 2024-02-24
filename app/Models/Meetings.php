@@ -14,6 +14,7 @@ class Meetings extends Model
         'location',
         'status',
         'description',
+        'date',
         
     ];
 }

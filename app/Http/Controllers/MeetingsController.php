@@ -31,6 +31,7 @@ class MeetingsController extends Controller
                 'title' => 'required',
                 'location' => 'required',
                 'status' => 'required',
+                'date' => 'nullable|date',
                 'description' => 'required',
                 
             ]);
@@ -76,13 +77,7 @@ class MeetingsController extends Controller
                 'location' => 'sometimes|required',
                 'status' => 'sometimes|required',
                 'description' => 'sometimes|required',
-                'lawyer_id' => [
-                    'sometimes',
-                    Rule::requiredIf(function () use ($request) {
-                        // Additional logic to check if lawyer_id is required
-                        return !empty($request->input('name'));
-                    }),
-                ],
+               
             ]);
 
             $meetings->update($request->all());

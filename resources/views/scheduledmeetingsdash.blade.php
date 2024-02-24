@@ -163,9 +163,20 @@
             <div class="mb-6">
                 <label for="task_description" class="text-blue-300">Status</label>
                 <br>
-                <input type="text" id="status" name="status" value=""
-                    class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                    <select id="status" name="status" class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" name="status" required>
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                
             </div>
+
+            <div class="mb-6">
+              <label for="date" class="text-blue-300">Date</label>
+              <br>
+              <input type="date" id="date" name="date" class="input input-bordered border-cyan-400 w-full max-w-xs mt-1"  required>
+              
+          </div>
       
             <div class="mb-6">
                 <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Description</label>
@@ -275,13 +286,13 @@
             <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
                 <div class="flex justify-center items-center space-x-5 h-full">
                   <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
-                        class="h-40 mr-0 lg:mr-10 w-38">
+                        class="h-28  mr-0 lg:mr-10 w-38">
                     <div>
                       
                        
                       
                         <h2 class="text-4xl font-bold text-gray-400">{{$meeting->title}}</h2>
-                        <p class="text-cyan-400">212258372</p>
+                        <p class="text-cyan-400">{{ $meeting->date}} </p>
                     </div>
                     
                 </div>
@@ -301,7 +312,17 @@
                       <!-- Card 2 -->
                       <div
                       class="flex-1  rounded-lg flex flex-col items-center justify-center p-4 space-y-2  m-2">
-                     <i class="fas fa-check-circle text-5xl text-green-500"></i>
+                      @if($meeting->status === 'Completed')
+                      <i class="fas fa-check-circle text-5xl text-green-500"></i>
+                      @elseif($meeting->status === 'Pending')
+                      <i class="fas fa-regular fa-clock text-5xl text-yellow-500 animate-jump animate-infinite animate-duration-[1500ms]"></i>
+                      @elseif($meeting->status === 'Cancelled')
+                      <i class="fas fa-circle-xmark text-5xl text-red-500"></i>
+                      @endif
+    
+
+                      
+                    
                   </div>
 
                     <!-- Card 3 -->
