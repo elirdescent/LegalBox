@@ -79,27 +79,39 @@
                 <div class="mb-4">
                     <label for="title" class="text-blue-300">Title</label>
                     <br>
-                    <input type="text" id="title" name="title" value=""
+                    <input type="text" id="title" name="title" value="{{ old('title', $meeting->title)}}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
                     <label for="name" class="text-blue-300">Location</label>
                     <br>
-                    <input type="text" id="location" name="location" value=""
+                    <input type="text" id="location" name="location" value="{{ old('location', $meeting->location)}}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
-                  <div class="mb-6">
-                <label for="task_description" class="text-blue-300">Status</label>
+
+                <div class="mb-6">
+                  <label for="task_description" class="text-blue-300">Status</label>
+                  <br>
+                      <select value="{{old('status',$meeting->status)}}" id="status" name="status" class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" name="status" required>
+                          <option value="Pending">Pending</option>
+                          <option value="Completed">Completed</option>
+                          <option value="Cancelled">Cancelled</option>
+                      </select>
+                  
+              </div>
+
+              <div class="mb-6">
+                <label for="date" class="text-blue-300">Date</label>
                 <br>
-                <input type="text" id="status" name="status" value=""
-                    class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+                <input type="date" id="date" name="date" value="{{old('date',$meeting->date)}}" class="input input-bordered border-cyan-400 w-full max-w-xs mt-1"  required>
+                
             </div>
       
-            <div class="mb-6">
-                <label for="charge_description" id="charge_description" name="charge_description" class="text-blue-300">Description</label>
+              <div class="mb-6">
+                <label for="description"  class="text-blue-300">Charge Description</label>
                 <br>
-                <textarea type="pargraph" id="description" name="description" value=""
-                    class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+                <textarea id="description" name="description" class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
+                  {{ old('description', $meeting->description) }}
               </textarea>
             </div>
       
@@ -129,7 +141,11 @@
               <h3 class="font-bold text-lg text-error">Warning!</h3>
               <p class="py-4">Deleted cases cannot be returned.</p>
               <div class="modal-action">
+                <form method="POST" action="{{ route('meetings.delete', $meeting->id) }}">
+                  @csrf
+                  @method('DELETE')
                 <button class="btn text-error">Delete</button>
+                </form>
                 <label for="my_modal_delete_{{$meeting->id}}" class="btn">Close</label>
                 
               </div>

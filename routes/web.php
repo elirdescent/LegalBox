@@ -51,3 +51,4 @@ Route::put('/cases/{id}',[LegalCaseController::class,'update'])->name('cases.upd
 Route::post('/meetings',[MeetingsController::class,'store'])->name('meetings.store');
 Route::get('meetings', [MeetingsController::class,'index'] )->name('meetings');
 Route::put('/meetings/{id}',[MeetingsController::class,'update'])->name('meetings.update');
+Route::delete('/meetings/{id}',[MeetingsController::class,'destroy'])->name('meetings.delete');
