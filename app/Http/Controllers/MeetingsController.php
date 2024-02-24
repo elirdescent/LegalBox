@@ -16,8 +16,8 @@ class MeetingsController extends Controller
      */
     public function index()
     {
-        $meeting = Meeting::all();
-        return view('meetings', compact('meetings'));
+        $meetings = Meetings::all();
+        return view('scheduledmeetingsdash', compact('meetings'));
     }
 
 
@@ -35,9 +35,9 @@ class MeetingsController extends Controller
                 
             ]);
 
-            $meeting = Meeting::create($request->all());
+            $meeting = Meetings::create($request->all());
 
-            return redirect(route('cases'), 201)->with(['success' => 'Meeting created successfully']);
+            return redirect(route('meetings'), 201)->with(['success' => 'Meeting created successfully']);
         } catch (ValidationException $e) {
             return response()->json(['error' => $e->validator->errors()], 400);
         } catch (QueryException $e) {
@@ -58,7 +58,7 @@ class MeetingsController extends Controller
      */
     public function show(string $id)
     {
-        return Meeting::find($id);
+        return Meetings::find($id);
     }
 
     /**

@@ -10,6 +10,20 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+
+    <script>
+
+      const accessToken = localStorage.getItem('access_token');
+      
+      if (!accessToken) {
+          // Redirect to the login page if the access token is not found
+          window.location.href = "{{ route('login') }}";
+      }
+          </script>
+  
+  
+
      @vite('resources/css/app.css')
 
      @foreach($legalcases as $case)
@@ -352,21 +366,40 @@
 
          @endforeach
 
-
-
-      
-        
-        
-        
-
-
-        
-
         
         
       </section>
 
 
-</div>    
+</div>
+
+<script>
+  document.getElementById('logoutButton').addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      // Send logout request to the Laravel backend
+      fetch("{{ route('lawyer.logout') }}", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              "X-CSRF-TOKEN": "{{ csrf_token() }}"
+          },
+      })
+      .then(response => {
+          // Assuming the logout endpoint returns a 204 No Content status on success
+          // Logout successful, redirect to the home page
+          window.location.href = "{{ route('home') }}";
+  
+          // Delete the token from localStorage
+          localStorage.removeItem('access_token');
+      })
+      .catch(error => {
+          console.error(error);
+          // Handle logout error
+      });
+  });
+  </script>
+
+
 </body>
 </html>

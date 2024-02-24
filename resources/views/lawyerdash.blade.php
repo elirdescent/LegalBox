@@ -206,7 +206,7 @@ if (!accessToken) {
               <thead class="text-cyan-400">
                 <tr>
                
-                  <th><h1 class="text-md">Latest Clients</h1></th>
+                  <th><h1 class="text-lg">Latest Clients</h1></th>
 
                 </tr>
                 <tr>
@@ -257,7 +257,7 @@ if (!accessToken) {
               <thead class="text-cyan-400">
                 <tr>
                
-                  <th><h1 class="text-md">Latest Cases</h1></th>
+                  <th><h1 class="text-lg">Latest Cases</h1></th>
 
                 </tr>
                 <tr>

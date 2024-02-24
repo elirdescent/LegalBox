@@ -33,7 +33,7 @@ Route::get('dashboard',[LawyerController::class,'dashboard']);
 Route::get('/clients',[ClientController::class,'index'])->name('clients');
 Route::view('cases' , 'legalcases');
 Route::view('firmdash','firmdashboard');
-Route::view('meetings', 'scheduledmeetingsdash');
+
 Route::view('lawyer', 'lawyerlist')->name('lawyer');
 Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
 
@@ -49,3 +49,4 @@ Route::delete('/cases/{id}',[LegalCaseController::class,'destroy'])->name('cases
 Route::put('/cases/{id}',[LegalCaseController::class,'update'])->name('cases.update');
 
 Route::post('/meetings',[MeetingsController::class,'store'])->name('meetings.store');
+Route::get('meetings', [MeetingsController::class,'index'] )->name('meetings');
