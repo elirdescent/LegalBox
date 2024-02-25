@@ -137,14 +137,46 @@ class LegalCaseController extends Controller
 
 
 
-   /**
-     * @param string $name
-     * @return \Illuminate\Http\Response 
-     */
-    public function search($name)
+    public function filter($name)
     {
+
+        $clients = Client::all(); 
+        
+        if($name == "progress")
+        {
+            $legalcases = LegalCase::orderBy('progress', 'desc')->get();
+
+        }
+        else if($name == "business")
+        {
+            $legalcases = LegalCase::where('category','Business Law')->get();;
+        }
+        else if($name == "family")
+        {
+            $legalcases = LegalCase::where('category','Family Law')->get();;
+        }
+        else if($name == "criminal")
+        {
+            $legalcases = LegalCase::where('category','Criminal Defense');
+        }
+
+        return view('legalcases',compact('legalcases','clients'));
+        
      
 
     }
+
+    public function search($search)
+    {
+        // Perform the search using Eloquent
+        $legalcases = LegalCase::where('title', 'like', "%$search%")
+            ->orWhere('client', 'like', "%$search%")
+            ->orWhere('description', 'like', "%$search%")
+            ->get();
+
+        // Return the search results to your view or in a JSON response
+        return view('legalcases',compact('legalcases','clients','search'));
+    }
+
 }
 

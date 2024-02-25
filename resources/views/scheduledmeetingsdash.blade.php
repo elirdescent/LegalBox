@@ -180,6 +180,7 @@
                 <label for="task_description" class="text-blue-300">Status</label>
                 <br>
                     <select id="status" name="status" class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" name="status" required>
+                     
                         <option value="Pending">Pending</option>
                         <option value="Completed">Completed</option>
                         <option value="Cancelled">Cancelled</option>

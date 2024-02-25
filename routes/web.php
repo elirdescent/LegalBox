@@ -47,6 +47,8 @@ Route::get('/cases', [LegalCaseController::class,'index'])->name('cases');
 Route::post('/cases',[LegalCaseController::class,'store'])->name('legalcases.store');
 Route::delete('/cases/{id}',[LegalCaseController::class,'destroy'])->name('cases.delete');
 Route::put('/cases/{id}',[LegalCaseController::class,'update'])->name('cases.update');
+Route::post('/cases/{name}', [LegalCaseController::class, 'filter'])->name('cases.filter');
+
 
 Route::post('/meetings',[MeetingsController::class,'store'])->name('meetings.store');
 Route::get('meetings', [MeetingsController::class,'index'] )->name('meetings');

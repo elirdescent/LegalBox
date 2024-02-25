@@ -131,12 +131,30 @@ class MeetingsController extends Controller
 
 
 
-   /**
-     * @param string $name
-     * @return \Illuminate\Http\Response 
-     */
+
     public function search($name)
     {
+        
+        if($name == "progress")
+        {
+            $meetings = Meetings::orderBy('progress', 'desc')->get();
+
+        }
+        else if($name == "business")
+        {
+            $meetings = Meetings::where('category','Business Law');
+        }
+        else if($name == "family")
+        {
+            $meetings = Meetings::where('category','Family Law');
+        }
+        else if($name == "criminal")
+        {
+            $meetings = Meetings::where('category','Criminal Defense');
+        }
+
+        return view('schedulemeetingsdash',compact('meetings'));
+        
      
 
     }

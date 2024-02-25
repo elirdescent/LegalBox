@@ -189,7 +189,12 @@ if (!accessToken) {
           <div class="w-1/3 text-center py-8">
             <div>
               <div class="text-grey-darker mb-2">
-                <button class="btn  btn-lg bg-neutral-800 border-none text-cyan-400 shadow-lg mt-1 ">See All</button>
+                
+                <span class="text-5xl font-bold text-cyan-400">{{$totalMeetings}}</span>
+                
+              </div>
+              <div class="text-sm uppercase text-grey tracking-wide">
+                Pending Meetings
               </div>
               <div class="text-sm uppercase text-grey tracking-wide">
             
