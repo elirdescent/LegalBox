@@ -132,8 +132,17 @@ if (!accessToken) {
     <div>
         
 
+      
     <div class="flex-grow container mx-auto sm:px-4 pt-6 pb-8 p-4">
-        <h1 class="text-3xl ml-2 py-5 font-bold">Welcome Back</h1>
+      <div>
+        <h1 class="text-3xl ml-2 py-5 font-bold">Welcome Back!
+          <br>
+         <span class="text-lg">Here's your latest data:</span> 
+        </h1>
+   
+      </div>
+  
+       
       <div class="background-radial-gradient border-cyan-800  rounded-lg shadow mb-6">
         <div class="px-6">
           <div class="flex justify-between -mb-px">

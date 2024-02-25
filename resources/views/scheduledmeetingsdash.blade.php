@@ -202,6 +202,8 @@
                     class="align-start justify-start input input-bordered border-cyan-400 w-full max-w-xs mt-1">
               </textarea>
             </div>
+
+            
       
             <div class="flex items-center justify-between ">
                 <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Schedule
@@ -258,7 +260,7 @@
   </div>
   <nav :class="{'block': open, 'hidden': !open}" class=" flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
     <div>
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="#"><i class="fas fa-home mr-2 "></i>Home</a>
+    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('dashboard')}}"><i class="fas fa-home mr-2 "></i>Home</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('cases')}}"><i class="fas fa-file-contract mr-2"></i> Legal Cases</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('clients')}}"><i class="fas fa-user mr-2"></i>Clients</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-l" href="{{URL('meetings')}}"><i class="fas fa-handshake mr-2"></i>Scheduled Meetings</a>
@@ -273,18 +275,43 @@
     <!-- component -->
     <section class="container mx-auto p-6 ">
          <!-- Search Bar -->
-        <div class="bg-neutral-900 rounded-lg border-none p-3 mb-4 shadow-md">
+         <div>
             <div class="flex items-center">
-                <i class="px-3 fas fa-search ml-1"></i>
-                <input type="text" placeholder="Search..." class="ml-3 focus:outline-none w-full bg-neutral-900">
-            </div>
-        </div>
+            
+      </div>
+    </div>
 
        <label for="my_modal_add" class="btn align-center mb-4 bg-neutral-900 text-cyan-400"> <i class="fas fa-handshake"></i>Schedule Meeting</label>
 
+       <div class="dropdown">
+        <div tabindex="0" role="button" class="btn m-1 bg-neutral-900">
+          <i class="fas fa-filter text-yellow-500"></i>
+          <p class="text-yellow-500 opacity-50">Filter</p>
+        </div>
+        <ul tabindex="0" class="font-bold mb-5 dropdown-content z-[1] menu p-2 shadow bg-neutral-800 rounded-box w-52">
+          <form action="{{route('meetings.filter','pending')}}" method="POST" class="grid grid-cols-1 gap-4">
+            @csrf
+          <li><button type="submit">Pending Meetings</button></li>
+          </form>
+
+          <form action="{{route('meetings.filter','cancelled')}}" method="POST" class="grid grid-cols-1 gap-4">
+            @csrf
+            <li><button type="submit">Cancelled Meetings</button></li>
+          </form>
+
+          <form action="{{route('meetings.filter','completed')}}" method="POST" class="grid grid-cols-1 gap-4">
+            @csrf
+            <li><button type="submit">Completed Meetings</button></li>
+          </form>
+
+         
+        </ul>
+      </div>
 
 
-       
+
+      @if ( count($meetings) > 0) 
+
        @foreach($meetings as $meeting)
       
         <!-- Meeting CARD !-->
@@ -366,6 +393,22 @@
 
       @endforeach
 
+      @else
+
+      <div class="flex mt-20 items-center justify-center p-5 w-full bg-gray-850 ">
+        <div class="text-center">
+          <div class="inline-flex rounded-full bg-neutral-900 p-4">
+            <div class="rounded-full stroke-gray-900 bg-cyan-400 opacity-15 p-4">
+              <svg class="w-16 h-16"   viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8H6.01M6 16H6.01M6 12H18C20.2091 12 22 10.2091 22 8C22 5.79086 20.2091 4 18 4H6C3.79086 4 2 5.79086 2 8C2 10.2091 3.79086 12 6 12ZM6 12C3.79086 12 2 13.7909 2 16C2 18.2091 3.79086 20 6 20H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 16L22 21M22 16L17 21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+          </div>
+          <h1 class="mt-5 text-[36px] font-bold text-cyan-400 opacity-15 lg:text-[50px]">No meetings found!</h1>
+          <p class="text-slate-600 lg:text-lg"> Try searching something else.</p>
+        </div>
+      </div>
+
+
+      @endif
 
       
      

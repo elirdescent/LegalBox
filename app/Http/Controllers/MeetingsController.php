@@ -132,28 +132,25 @@ class MeetingsController extends Controller
 
 
 
-    public function search($name)
+    public function filter($name)
     {
         
-        if($name == "progress")
+        if($name == "pending")
         {
-            $meetings = Meetings::orderBy('progress', 'desc')->get();
+            $meetings = Meetings::where('status', 'Pending')->get();
 
         }
-        else if($name == "business")
+        else if($name == "cancelled")
         {
-            $meetings = Meetings::where('category','Business Law');
+            $meetings = Meetings::where('status','Cancelled')->get();
         }
-        else if($name == "family")
+        else if($name == "completed")
         {
-            $meetings = Meetings::where('category','Family Law');
+            $meetings = Meetings::where('status','Completed')->get();
         }
-        else if($name == "criminal")
-        {
-            $meetings = Meetings::where('category','Criminal Defense');
-        }
+       
 
-        return view('schedulemeetingsdash',compact('meetings'));
+        return view('scheduledmeetingsdash',compact('meetings'));
         
      
 

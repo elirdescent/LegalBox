@@ -48,9 +48,12 @@ Route::post('/cases',[LegalCaseController::class,'store'])->name('legalcases.sto
 Route::delete('/cases/{id}',[LegalCaseController::class,'destroy'])->name('cases.delete');
 Route::put('/cases/{id}',[LegalCaseController::class,'update'])->name('cases.update');
 Route::post('/cases/{name}', [LegalCaseController::class, 'filter'])->name('cases.filter');
-
+Route::get('/casessearch', [LegalCaseController::class, 'search'])->name('cases.search');
 
 Route::post('/meetings',[MeetingsController::class,'store'])->name('meetings.store');
 Route::get('meetings', [MeetingsController::class,'index'] )->name('meetings');
 Route::put('/meetings/{id}',[MeetingsController::class,'update'])->name('meetings.update');
+Route::post('/meetings/{name}', [MeetingsController::class, 'filter'])->name('meetings.filter');
 Route::delete('/meetings/{id}',[MeetingsController::class,'destroy'])->name('meetings.delete');
+
+Route::get('/clientsearch', [ClientController::class, 'search'])->name('clients.search');

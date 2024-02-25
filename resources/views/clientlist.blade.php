@@ -303,15 +303,33 @@ if (!accessToken) {
 
     <!-- component -->
     <section class="container mx-auto p-6 ">
+
+      <div class="bg-neutral-900 rounded-lg border-none   mb-4 shadow-md">
+
+          
+
+        <form action="{{route('clients.search')}}" method="GET">
+          @csrf
+          <div class="flex items-center">
+            <i class="px-3 fas fa-search ml-1"></i>
+          <input type="text" name="search" id="search" placeholder="Search by keyword..." class="ml-3  focus:outline-none w-full bg-neutral-900  opacity-30">
+        <button type="submit" action="" class="btn m-2 text-cyan-400 hover:shadow-md ">Search</button>
+      </form>
+    </div>
+  </div>
         <div class="mb-2 flex justify-start items-center">
+
+          
      
 
-        <label for="my_modal_add" class="btn btn-sm rounded-full"><svg viewBox="0 0 24 24"class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L17 18M17 18L14 18M17 18V15M17 18V21M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <span class="text-cyan-400"> Add Client</span></label>
+        <label for="my_modal_add" class="btn bg-neutral-900 rounded-lg"><svg viewBox="0 0 24 24"class="h-5" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L17 18M17 18L14 18M17 18V15M17 18V21M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#00f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <span class="text-cyan-400"> Add Client</span></label>
         
 
     </div>
+       @if ( count($clients) > 0)
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
           <div class="w-full overflow-x-auto">
+         
             <table class="w-full">
               <thead class="bg-neutral-900">
                 <tr class="text-md font-semibold bg-neutral-900  text-cyan-400 tracking-wide text-left s bg-gray-100 uppercase  border-gray-600">
@@ -326,6 +344,8 @@ if (!accessToken) {
               </thead>
               <tbody class="bg-neutral-800">
             
+
+
 
 @foreach($clients as $client)
                    <!-- TABLE CELL !-->
@@ -356,11 +376,21 @@ if (!accessToken) {
                   </tr>
                     <!-- TABLE CELL !-->
 @endforeach
-                     
 
+@else
+<div class="flex mt-10 items-center justify-center p-5 w-full bg-gray-850 ">
+  <div class="text-center">
+    <div class="inline-flex rounded-full bg-neutral-900 p-4">
+      <div class="rounded-full stroke-gray-900 bg-cyan-400 opacity-15 p-4">
+        <svg class="w-16 h-16"   viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8H6.01M6 16H6.01M6 12H18C20.2091 12 22 10.2091 22 8C22 5.79086 20.2091 4 18 4H6C3.79086 4 2 5.79086 2 8C2 10.2091 3.79086 12 6 12ZM6 12C3.79086 12 2 13.7909 2 16C2 18.2091 3.79086 20 6 20H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 16L22 21M22 16L17 21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+    <h1 class="mt-5 text-[36px] font-bold text-cyan-400 opacity-15 lg:text-[50px]">No cases found!</h1>
+    <p class="text-slate-600 lg:text-lg"> Try searching something else.</p>
+  </div>
+</div>
 
-                    
-                    
+@endif
                 
               </tbody>
             </table>

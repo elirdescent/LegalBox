@@ -130,16 +130,18 @@ class ClientController extends Controller
     }
 
 
-   /**
-     * @param string $name
-     * @return \Illuminate\Http\Response 
-     */
-    public function search($name)
+    public function search(Request $request)
     {
-       $clients = Client::where('name','like','%'.$name.'%')->get();
+  
+        $clients = Client::all();
+        $search = $request->input('search');
       
-       return response()->json($clients);
-       
+        $clients = Client::where('name', 'like', "%$search%")
+            ->orWhere('surname', 'like', "%$search%")
+            ->orWhere('job', 'like', "%$search%")
+            ->get();
 
+    
+        return view('clientlist',compact('clients'));
     }
 }

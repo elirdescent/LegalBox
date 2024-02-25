@@ -157,7 +157,7 @@ class LegalCaseController extends Controller
         }
         else if($name == "criminal")
         {
-            $legalcases = LegalCase::where('category','Criminal Defense');
+            $legalcases = LegalCase::where('category','Criminal Defense')->get();
         }
 
         return view('legalcases',compact('legalcases','clients'));
@@ -166,16 +166,19 @@ class LegalCaseController extends Controller
 
     }
 
-    public function search($search)
+    public function search(Request $request)
     {
-        // Perform the search using Eloquent
+  
+        $clients = Client::all();
+        $search = $request->input('search');
+      
         $legalcases = LegalCase::where('title', 'like', "%$search%")
             ->orWhere('client', 'like', "%$search%")
             ->orWhere('description', 'like', "%$search%")
             ->get();
 
         // Return the search results to your view or in a JSON response
-        return view('legalcases',compact('legalcases','clients','search'));
+        return view('legalcases',compact('legalcases','clients'));
     }
 
 }
