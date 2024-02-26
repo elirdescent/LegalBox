@@ -181,7 +181,7 @@ if (!accessToken) {
               </div>
             </div>
           </div>
-`<!-- Sign Out Modal -->
+<!-- Sign Out Modal -->
 
     @endforeach
 </head>
