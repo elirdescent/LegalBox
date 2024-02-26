@@ -147,38 +147,7 @@ if (!accessToken) {
     
 
 
-     <script>
-      document.getElementById('addClientForm').addEventListener('submit', function (e) {
-          e.preventDefault();
-  
-          // Collect form data
-          var formData = new FormData(this);
-  
-          // Send registration request to the Laravel backend
-          fetch("{{ route('clients.store') }}", {
-              method: "POST",
-              body: formData,
-          })
-          .then(response => response.json())
-          .then(data => {
-              console.log(data);
-  
-              // Handle registration response as needed
-              if (data.client) {
-                  alert("Client added successfully!"); // Display an alert for testing
-                  // Redirect to the clients page
-                  window.location.replace("{{ URL('clients') }}");
-              } else {
-                  alert("Client addition failed!"); // Display an alert for testing
-              }
-          })
-          .catch(error => {
-              console.error(error);
-              // Handle registration error
-          });
-      });
-  </script>
-  
+    
 
       <!-- Add Modal -->
 
