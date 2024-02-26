@@ -5,6 +5,9 @@ use App\Http\Controllers\LawFirmAuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LawyerController;
+use App\Http\Controllers\MeetingsController;
+use App\Http\Controllers\LegalCaseController;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,25 +31,38 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::post('/lawyerregister', [LawyerAuthController::class, 'register'])->name('lawyer.register');
+//API Authentication 
+Route::view('/home','home');
+Route::view('login', 'lawyerlogin');
+Route::view('register','lawyerregister');
+Route::post('/lawyerregister', [LawyerAuthController::class, 'register']);
 Route::post('/lawyerlogin', [LawyerAuthController::class, 'login'])->name('lawyer.login');
 
+//Dashboard
+Route::get('dashboard',[LawyerController::class,'dashboard']);
 
+//Legal Cases
+Route::get('/cases', [LegalCaseController::class,'index']);
+Route::post('/cases',[LegalCaseController::class,'store']);
+Route::delete('/cases/{id}',[LegalCaseController::class,'destroy']);
+Route::put('/cases/{id}',[LegalCaseController::class,'update']);
+Route::post('/cases/{name}', [LegalCaseController::class, 'filter']);
+Route::get('/casessearch', [LegalCaseController::class, 'search']);
 
-Route::view('login', 'lawyerlogin');
+//Meetings
+Route::post('/meetings',[MeetingsController::class,'store']);
+Route::get('meetings', [MeetingsController::class,'index'] );
+Route::put('/meetings/{id}',[MeetingsController::class,'update']);
+Route::post('/meetings/{name}', [MeetingsController::class, 'filter']);
+Route::delete('/meetings/{id}',[MeetingsController::class,'destroy']);
 
-Route::view('dashboard','lawyerdash')->name('dashboard');
-
-
-Route::view('home','home')->name('home');
-
-
-
-    Route::post('/clients/{id}',[ClientController::class,'destroy'])->name('clients.delete');
-    Route::put('clients/{id}',[ClientController::class,'update'])->name('clients.update');
-    Route::resource('clients',ClientController::class);
-    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
- 
+//Clients
+Route::post('/clients', [ClientController::class, 'store']);
+Route::get('/clients',[ClientController::class,'index']);
+Route::get('/clientsearch', [ClientController::class, 'search']);
+Route::post('/clients/{id}',[ClientController::class,'destroy']);
+Route::put('clients/{id}',[ClientController::class,'update']);
+Route::delete('/clients/{id}',[ClientController::class,'destroy']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {

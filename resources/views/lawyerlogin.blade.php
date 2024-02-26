@@ -76,7 +76,7 @@
                 var formData = new FormData(this);
         
                 // Send login request to the Laravel backend
-                fetch("{{ route('lawyer.login') }}", {
+                fetch("{{route('lawyer.login')}}", {
                     method: "POST",
                     body: formData,
                 })
