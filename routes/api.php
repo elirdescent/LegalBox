@@ -31,13 +31,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('/lawyerregister', [LawyerAuthController::class, 'register'])->name('lawyer.register');
 Route::post('/lawyerlogin', [LawyerAuthController::class, 'login'])->name('lawyer.login');
 
-Route::post('/lawfirmregister', [LawFirmAuthController::class, 'register'])->name('lawfirm.register');
-Route::post('/lawfirmlogin', [LawFirmAuthController::class, 'login'])->name('lawfirm.login');
+
 
 Route::view('login', 'lawyerlogin');
 
 Route::view('dashboard','lawyerdash')->name('dashboard');
-Route::view('dashboard', 'firmdashboard') ->name('firmdashboard');
+
 
 Route::view('home','home')->name('home');
 
@@ -47,7 +46,7 @@ Route::view('home','home')->name('home');
     Route::put('clients/{id}',[ClientController::class,'update'])->name('clients.update');
     Route::resource('clients',ClientController::class);
     Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
-    Route::post('/lawfirmlogout', [LawFirmAuthController::class, 'logout'])->name('lawfirm.logout');
+ 
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {

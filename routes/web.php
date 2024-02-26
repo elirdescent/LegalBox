@@ -32,14 +32,11 @@ Route::view('loginrole', 'role');
 Route::get('dashboard',[LawyerController::class,'dashboard']);
 Route::get('/clients',[ClientController::class,'index'])->name('clients');
 Route::view('cases' , 'legalcases');
-Route::view('firmdash','firmdashboard');
+
 
 Route::view('lawyer', 'lawyerlist')->name('lawyer');
 Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
 
-Route::get('/firmregister', function () {
-    return view('firmregister');
-});
 
 
 
