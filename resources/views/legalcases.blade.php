@@ -87,11 +87,14 @@
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
                 <div class="mb-6">
-                    <label for="surname" class="text-blue-300">Client</label>
-                    <br>
-                    <input type="text" id="client" name="client" value="{{ old('client', $case->client) }}"
-                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-                </div>
+                  <label for="task_description" class="text-blue-300">Client</label>
+                  <br>
+                 <select name="client" value="{{ old('client', $case->client)}}" class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" id="client">
+                  @foreach($clients as $client)
+                  <option value="{{$client->name}} {{$client->surname}}">{{$client->name}} {{$client->surname}}</option>
+                  @endforeach
+                 </select>
+              </div>
                 <div class="mb-6">
                     <label for="task_description" class="text-blue-300">Case Category</label>
                     <br>
