@@ -38,10 +38,8 @@ class AuthController extends Controller
             'password' => 'required|string'
         ]);
 
-        // Check email
         $user = User::where('email', $fields['email'])->first();
 
-        // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
             return response([
                 'message' => 'Bad creds'

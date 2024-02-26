@@ -19,7 +19,7 @@ class LegalCaseController extends Controller
     public function index()
     {
          $legalcases = LegalCase::all();
-         $clients = Client::all(); // Assuming you have a Client model
+         $clients = Client::all(); 
         return view('legalcases', compact('legalcases','clients'));
     }
 
@@ -46,13 +46,9 @@ class LegalCaseController extends Controller
         } catch (ValidationException $e) {
             return response()->json(['error' => $e->validator->errors()], 400);
         } catch (QueryException $e) {
-            // Check for specific SQLSTATE error code indicating a constraint violation
             if ($e->getCode() === '23000') {
                 return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
             }
-
-            // If it's not an integrity constraint violation, you can handle it accordingly
-            // (e.g., log the error, return a generic error response, etc.)
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
@@ -84,7 +80,6 @@ class LegalCaseController extends Controller
                 'lawyer_id' => [
                     'sometimes',
                     Rule::requiredIf(function () use ($request) {
-                        // Additional logic to check if lawyer_id is required
                         return !empty($request->input('name'));
                     }),
                 ],
@@ -96,24 +91,19 @@ class LegalCaseController extends Controller
         } catch (ValidationException $e) {
             return response()->json(['error' => $e->validator->errors()], 400);
         } catch (QueryException $e) {
-            // Check for specific SQLSTATE error code indicating a constraint violation
             if ($e->getCode() === '23000') {
                 return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
             }
-
-            // If it's not an integrity constraint violation, you can handle it accordingly
-            // (e.g., log the error, return a generic error response, etc.)
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     
-     
-
     }
 
 
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy(string $id)
     {
         try {
@@ -124,13 +114,9 @@ class LegalCaseController extends Controller
         } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Case not found'], 404);
         } catch (QueryException $e) {
-            // Check for specific SQLSTATE error code indicating a constraint violation
             if ($e->getCode() === '23000') {
                 return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
             }
-
-            // If it's not an integrity constraint violation, you can handle it accordingly
-            // (e.g., log the error, return a generic error response, etc.)
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
@@ -162,8 +148,6 @@ class LegalCaseController extends Controller
 
         return view('legalcases',compact('legalcases','clients'));
         
-     
-
     }
 
     public function search(Request $request)
@@ -177,7 +161,6 @@ class LegalCaseController extends Controller
             ->orWhere('description', 'like', "%$search%")
             ->get();
 
-        // Return the search results to your view or in a JSON response
         return view('legalcases',compact('legalcases','clients'));
     }
 

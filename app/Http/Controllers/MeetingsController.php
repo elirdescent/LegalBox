@@ -42,13 +42,9 @@ class MeetingsController extends Controller
         } catch (ValidationException $e) {
             return response()->json(['error' => $e->validator->errors()], 400);
         } catch (QueryException $e) {
-            // Check for specific SQLSTATE error code indicating a constraint violation
             if ($e->getCode() === '23000') {
                 return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
             }
-
-            // If it's not an integrity constraint violation, you can handle it accordingly
-            // (e.g., log the error, return a generic error response, etc.)
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
@@ -86,18 +82,11 @@ class MeetingsController extends Controller
         } catch (ValidationException $e) {
             return response()->json(['error' => $e->validator->errors()], 400);
         } catch (QueryException $e) {
-            // Check for specific SQLSTATE error code indicating a constraint violation
             if ($e->getCode() === '23000') {
                 return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
             }
-
-            // If it's not an integrity constraint violation, you can handle it accordingly
-            // (e.g., log the error, return a generic error response, etc.)
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
-    
-     
-
     }
 
 
@@ -114,31 +103,20 @@ class MeetingsController extends Controller
         } catch (ModelNotFoundException $e) {
             return response()->json(['error' => 'Client not found'], 404);
         } catch (QueryException $e) {
-            // Check for specific SQLSTATE error code indicating a constraint violation
             if ($e->getCode() === '23000') {
                 return response()->json(['error' => 'Bad Request: Integrity constraint violation'], 400);
             }
-
-            // If it's not an integrity constraint violation, you can handle it accordingly
-            // (e.g., log the error, return a generic error response, etc.)
             return response()->json(['error' => 'Internal Server Error'], 500);
         }
     }
 
     
-
-
-
-
-
-
     public function filter($name)
     {
         
         if($name == "pending")
         {
             $meetings = Meetings::where('status', 'Pending')->get();
-
         }
         else if($name == "cancelled")
         {
@@ -148,11 +126,7 @@ class MeetingsController extends Controller
         {
             $meetings = Meetings::where('status','Completed')->get();
         }
-       
-
         return view('scheduledmeetingsdash',compact('meetings'));
         
-     
-
     }
 }
