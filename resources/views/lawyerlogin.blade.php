@@ -72,10 +72,9 @@
             document.getElementById('loginForm').addEventListener('submit', function (e) {
                 e.preventDefault();
         
-                // Collect form data
                 var formData = new FormData(this);
         
-                // Send login request to the Laravel backend
+        
                 fetch("{{route('lawyer.login')}}", {
                     method: "POST",
                     body: formData,
@@ -84,12 +83,12 @@
                 .then(data => {
                     console.log(data);
         
-                    // Handle login response as needed
+             
                     if (data.token) {
-                        // Store the access token in localStorage
+                   
                         localStorage.setItem('access_token', data.token);
         
-                        // Redirect to the dashboard
+                      
                         window.location.href = "{{ URL('dashboard') }}";
                     } else {
                         document.getElementById('errorMessage').innerText = "Invalid login data! ";
@@ -97,7 +96,7 @@
                 })
                 .catch(error => {
                     console.error(error);
-                    // Handle login error
+                   
                 });
             });
         </script>

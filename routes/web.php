@@ -58,3 +58,4 @@ Route::get('/clientsearch', [ClientController::class, 'search'])->name('clients.
 Route::post('/clients/{id}',[ClientController::class,'destroy'])->name('clients.delete');
 Route::put('clients/{id}',[ClientController::class,'update'])->name('clients.update');
 Route::delete('/clients/{id}',[ClientController::class,'destroy'])->name('clients.delete');
+

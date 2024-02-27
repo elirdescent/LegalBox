@@ -50,7 +50,7 @@
 
                 
                
-                <progress class="progress progress-accent w-56" value="40" max="100"></progress> 
+                <progress class="progress progress-accent w-56" value="{{$case->progress}}" max="100"></progress> 
                    <p class="py-6">{{$case->description}}</p>
               </div>
             </div>

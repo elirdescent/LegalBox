@@ -15,7 +15,6 @@
       const accessToken = localStorage.getItem('access_token');
 
 if (!accessToken) {
-    // Redirect to the login page if the access token is not found
     window.location.href = "{{ route('login') }}";
 }
      </script>
@@ -201,9 +200,9 @@ if (!accessToken) {
   </div>
   <nav :class="{'block': open, 'hidden': !open}" class=" flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
     <div>
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('dashboard')}}"><i class="fas fa-user mr-2"></i>Home</a>
+    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('dashboard')}}"><i class="fas fa-home mr-2"></i>Home</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 hover:bg-cyan-400 hover:text-neutral hover:shadow-lg transition ease-in-out duration-400 rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('cases')}}"><i class="fas fa-file-contract mr-2"></i> Legal Cases</a>
-    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-lg" href="{{URL('clients')}}"><i class="fas fa-home mr-2 "></i>Clients</a>
+    <a class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-neutral transition ease-in-out duration-400 rounded-lg hover:text-cyan-400 focus:text-cyan-600 focus:outline-none focus:shadow-outline hover:shadow-lg" href="{{URL('clients')}}"><i class="fas fa-user mr-2 "></i>Clients</a>
     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-400 bg-transparent   hover:bg-cyan-400 hover:shadow-lg transition ease-in-out duration-400 hover:text-neutral rounded-lg focus:outline-none focus:shadow-outline focus:bg-cyan-500" href="{{URL('meetings')}}"><i class="fas fa-handshake mr-2"></i>Scheduled Meetings</a>
     <label for="my_modal_signout" class="hover:cursor-pointer block px-4 py-2 mt-2 text-sm font-semibold text-white bg-error bg-opacity-30 transition ease-in-out duration-400 rounded-lg hover:text-error focus:text-neutral-900 focus:outline-none focus:shadow-outline hover:shadow-lg" href="#"><i class="fas fa-right-from-bracket mr-1"></i> Sign Out</label>
   </nav>
@@ -299,7 +298,7 @@ if (!accessToken) {
   document.getElementById('logoutButton').addEventListener('click', function (e) {
       e.preventDefault();
   
-      // Send logout request to the Laravel backend
+
       fetch("{{ route('lawyer.logout') }}", {
           method: "POST",
           headers: {
@@ -308,16 +307,12 @@ if (!accessToken) {
           },
       })
       .then(response => {
-          // Assuming the logout endpoint returns a 204 No Content status on success
-          // Logout successful, redirect to the home page
           window.location.href = "{{ route('home') }}";
   
-          // Delete the token from localStorage
           localStorage.removeItem('access_token');
       })
       .catch(error => {
           console.error(error);
-          // Handle logout error
       });
   });
   </script>

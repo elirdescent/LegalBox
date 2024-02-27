@@ -271,17 +271,5 @@
 <!-- Section: Design Block -->
     
 </body>
-{{-- <script>
-        let element = document.getElementById("jumbotron");
-      let opacity = 0;
-      function fade() {
-         if (opacity >= 1) {
-            return;
-         }
-         opacity += 0.04;
-         element.style.opacity = opacity;
-         requestAnimationFrame(fade);
-      }
-      requestAnimationFrame(fade);
-</script> --}}
+
 </html>

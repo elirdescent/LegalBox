@@ -117,16 +117,15 @@
     document.getElementById('registerForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Collect form data
         var formData = new FormData(this);
 
-        // Send registration request to the Laravel backend
+       
         fetch("{{ route('lawyer.register') }}", {
             method: "POST",
             body: formData,
         })
         .then(response => {
-            // Check if the response has a JSON content type
+          
             const contentType = response.headers.get('content-type');
             if (!contentType || !contentType.includes('application/json')) {
                 throw new Error('Expected JSON response, but received non-JSON content');
@@ -137,7 +136,6 @@
         .then(data => {
             console.log(data);
 
-            // Handle registration response as needed
             if (data.token) {
                 document.getElementById('successMessage').innerText = "Successfully registered! ";
                 window.location.href = "{{ URL('login') }}";
@@ -147,7 +145,7 @@
         })
         .catch(error => {
             console.error(error);
-            // Handle registration error
+           
         });
     });
 </script>

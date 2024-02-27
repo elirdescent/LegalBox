@@ -12,11 +12,9 @@
     
 
     <script>
-
 const accessToken = localStorage.getItem('access_token');
 
 if (!accessToken) {
-    // Redirect to the login page if the access token is not found
     window.location.href = "{{ route('login') }}";
 }
     </script>
@@ -325,7 +323,6 @@ if (!accessToken) {
 document.getElementById('logoutButton').addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Send logout request to the Laravel backend
     fetch("{{ route('lawyer.logout') }}", {
         method: "POST",
         headers: {
@@ -334,16 +331,12 @@ document.getElementById('logoutButton').addEventListener('click', function (e) {
         },
     })
     .then(response => {
-        // Assuming the logout endpoint returns a 204 No Content status on success
-        // Logout successful, redirect to the home page
+       
         window.location.href = "{{ route('home') }}";
-
-        // Delete the token from localStorage
         localStorage.removeItem('access_token');
     })
     .catch(error => {
         console.error(error);
-        // Handle logout error
     });
 });
 </script>
