@@ -48,6 +48,10 @@
                   <i class="fas fa-check-circle text-green-500 text-sm mt-1 mr-1"></i>
                   <h1 class="text-xl font-semibold text-gray-500 ml-1 "> {{$meeting->status}}</h1>
                 </div>
+                <div class="flex align-center ml-1">
+                  <i class="fas fa-user text-white text-sm mt-1 mr-1"></i>
+                  <h1 class="text-xl font-semibold text-gray-500 ml-1 ">@ {{$meeting->lawyer}}</h1>
+                </div>
 
                 
                
@@ -114,6 +118,17 @@
                   {{ old('description', $meeting->description) }}
               </textarea>
             </div>
+
+            <div class="mb-6">
+              <label for="task_description" class="text-blue-300">Lawyer</label>
+              <br>
+                  <select id="lawyer" name="lawyer" value="{{old('lawyer',$meeting->lawyer)}}" class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" name="status" required>
+                   @foreach($lawyers as $lawyer)
+                      <option value="{{$lawyer->username}}">@ {{$lawyer->username}}</option>
+                      @endforeach
+                  </select>
+              
+          </div>
       
             <div class="flex items-center justify-between ">
                 <button class="btn bg-cyan-400 hover:bg-blue-400 text-black duration-300 shadow-md" type="submit">Save
@@ -176,6 +191,19 @@
                 <input type="text" id="location" name="location" value=""
                     class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
+
+            <div class="mb-6">
+              <label for="task_description" class="text-blue-300">Lawyer</label>
+              <br>
+                  <select id="lawyer" name="lawyer" class="align-center input input-bordered border-cyan-400 w-full max-w-xs mt-1" name="status" required>
+                   @foreach($lawyers as $lawyer)
+                      <option value="{{$lawyer->username}}">@ {{$lawyer->username}}</option>
+                      @endforeach
+                  </select>
+              
+          </div>
+
+
             <div class="mb-6">
                 <label for="task_description" class="text-blue-300">Status</label>
                 <br>
@@ -316,18 +344,18 @@
       
         <!-- Meeting CARD !-->
 
-        <div class="w-full mb-8 overflow-hidden rounded-lg ">
+        <div class="w-full mb-8 overflow-hidden rounded-lg  ">
           <div class="w-full overflow-x-auto">
             
             
 
 
                 <!-- Main Content -->
-        <div class="lg:flex gap-4 items-stretch bg-neutral-900 ">
+        <div class="lg:flex  gap-4 items-stretch bg-neutral-900 ">
 
       
             <!-- Meeting Card -->
-            <div class="bg-neutral-900 md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
+            <div class="bg-neutral-900 flex justify-start md:p-2 p-6 rounded-lg  mb-4 lg:mb-0  lg:w-[35%] ">
                 <div class="flex justify-center items-center space-x-5 h-full">
                   <img src="{{URL('images/meetingicon.webp')}}" alt="wallet"
                         class="h-28  mr-0 lg:mr-10 w-38">

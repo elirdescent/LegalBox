@@ -188,7 +188,7 @@
               <br>
              <select name="client" class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" id="client">
               @foreach($clients as $client)
-              <option value="{{$client->name}} {{$client->surname}}">{{$client->name}} {{$client->surname}}</option>
+              <option value="{{$client->name}}">{{$client->name}}</option>
               @endforeach
              </select>
           </div>

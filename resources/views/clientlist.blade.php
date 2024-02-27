@@ -30,7 +30,7 @@ if (!accessToken) {
               <img src="{{URL('images/pic.png')}}" class="max-w-sm h-64 hidden lg:block" />
               <div>
                 <h1 class="text-md font-semibold text-gray-500 ml-1 ">{{$client->caseid}}</h1>
-                <h1 class="text-5xl text-cyan-400 font-bold">{{$client->name}} {{$client->surname}}</h1>
+                <h1 class="text-5xl text-cyan-400 font-bold">{{$client->name}}</h1>
                 <div class="flex align-center ml-1">
                   <i class="fas fa-briefcase text-white text-sm mt-1 mr-1"></i>
                   <h1 class="text-xl font-semibold text-gray-500 ml-1 "> {{$client->job}}</h1>
@@ -60,12 +60,7 @@ if (!accessToken) {
                     <input type="text" id="name" name="name" value="{{ old('name', $client->name) }}"
                         class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
                 </div>
-                <div class="mb-6">
-                    <label for="surname" class="text-blue-300">Client Surname</label>
-                    <br>
-                    <input type="text" id="surname" name="surname" value="{{ old('surname', $client->surname) }}"
-                        class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-                </div>
+              
                 <div class="mb-6">
                     <label for="caseid" class="text-blue-300">Client ID</label>
                     <br>
@@ -127,12 +122,6 @@ if (!accessToken) {
                 <label for="name" class="text-blue-300">Client Name</label>
                 <br>
                 <input type="text" id="name" name="name" value=""
-                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
-            </div>
-            <div class="mb-6">
-                <label for="surname" class="text-blue-300">Client Surname</label>
-                <br>
-                <input type="text" id="surname" name="surname" value=""
                     class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
             </div>
             <div class="mb-6">
@@ -254,7 +243,7 @@ if (!accessToken) {
                           <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                         </div>
                         <div>
-                          <p class="font-semibold text-gray-300">{{$client->name}} {{$client->surname}}</p>
+                          <p class="font-semibold text-gray-300">{{$client->name}}</p>
                           <p class="text-xs text-gray-500">Client</p>
                         </div>
                       </div>

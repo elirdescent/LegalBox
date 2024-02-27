@@ -13,6 +13,7 @@ class Meetings extends Model
         'title',
         'location',
         'status',
+        'lawyer',
         'description',
         'date',
         

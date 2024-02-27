@@ -31,7 +31,6 @@ class ClientController extends Controller
             $request->validate([
                 'caseid' => 'required',
                 'name' => 'required',
-                'surname' => 'required',
                 'job' => 'required',
                 'description' => 'required',
                 
@@ -69,7 +68,6 @@ class ClientController extends Controller
             $this->validate($request, [
                 'caseid' => 'sometimes|required',
                 'name' => 'sometimes|required',
-                'surname' => 'sometimes|required',
                 'job' => 'sometimes|required',
                 'description' => 'sometimes|required',
                 'lawyer_id' => [
@@ -121,7 +119,6 @@ class ClientController extends Controller
         $search = $request->input('search');
       
         $clients = Client::where('name', 'like', "%$search%")
-            ->orWhere('surname', 'like', "%$search%")
             ->orWhere('job', 'like', "%$search%")
             ->get();
 

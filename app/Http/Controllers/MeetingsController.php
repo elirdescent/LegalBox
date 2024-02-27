@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Meetings;
+use App\Models\Lawyer;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Rule;
 use Illuminate\Database\QueryException;
@@ -17,7 +18,9 @@ class MeetingsController extends Controller
     public function index()
     {
         $meetings = Meetings::all();
-        return view('scheduledmeetingsdash', compact('meetings'));
+        $lawyers = Lawyer::all();
+
+        return view('scheduledmeetingsdash', compact('meetings','lawyers'));
     }
 
 
@@ -32,6 +35,7 @@ class MeetingsController extends Controller
                 'location' => 'required',
                 'status' => 'required',
                 'date' => 'nullable|date',
+                'lawyer' => 'required',
                 'description' => 'required',
                 
             ]);
@@ -72,6 +76,7 @@ class MeetingsController extends Controller
                 'title' => 'sometimes|required',
                 'location' => 'sometimes|required',
                 'status' => 'sometimes|required',
+                'lawyer' => 'sometimes|required',
                 'description' => 'sometimes|required',
                
             ]);
@@ -113,6 +118,8 @@ class MeetingsController extends Controller
     
     public function filter($name)
     {
+
+        $lawyers = Lawyer::all();
         
         if($name == "pending")
         {
@@ -126,7 +133,7 @@ class MeetingsController extends Controller
         {
             $meetings = Meetings::where('status','Completed')->get();
         }
-        return view('scheduledmeetingsdash',compact('meetings'));
+        return view('scheduledmeetingsdash',compact('meetings','lawyers'));
         
     }
 }
