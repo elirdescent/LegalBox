@@ -39,7 +39,12 @@ Route::post('/lawyerregister', [LawyerAuthController::class, 'register']);
 Route::post('/lawyerlogin', [LawyerAuthController::class, 'login'])->name('lawyer.login');
 
 //Dashboard
-Route::get('dashboard',[LawyerController::class,'dashboard']);
+
+
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+
+    Route::get('dashboard',[LawyerController::class,'dashboard']);
 
 //Legal Cases
 Route::get('/cases', [LegalCaseController::class,'index']);
@@ -64,17 +69,13 @@ Route::post('/clients/{id}',[ClientController::class,'destroy']);
 Route::put('clients/{id}',[ClientController::class,'update']);
 Route::delete('/clients/{id}',[ClientController::class,'destroy']);
 
-// Protected routes
-Route::group(['middleware' => ['auth:sanctum']], function () {
-
     Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
 
 
    
 
 
-Route::get('/clients',[ClientController::class,'index']);
-Route::get('/clients/search/{name}',[ClientController::class,'search']);
+
 
 
 
