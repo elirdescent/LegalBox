@@ -63,11 +63,13 @@
         </button>
         </a>
         
+        <a href="{{URL('register')}}">
         <button type="button"
           class="inline-block rounded bg-cyan-400 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg- active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
           data-te-ripple-init data-te-ripple-color="light">
           Sign up 
         </button>
+         </a>
       </div>
       <!-- Right elements -->
     </div>
@@ -103,7 +105,7 @@
               <div class="pr-10">
                 
                 <p class="py-6">Sign up to manage your legal procedures and clients using LegalBox now. It's free!</p>
-                <button class="btn text-white bg-cyan-400">SIGN UP</button>
+                  <a href="{{URL('register')}}"> <button class="btn text-white bg-cyan-400">SIGN UP</button></a>
               </div>
           </div>
         </div>
@@ -226,7 +228,7 @@
           <div class="block r border-b-2 border-neutral-100 border-opacity-100 p-6 text-center dark:border-opacity-10">
             <p class="mb-4 text-lg text-cyan-400">
                 <img src="{{ URL('images/lawfirm.png') }}" alt="" class="h-20 mx-auto mb-5">
-                <strong>Law Firm Management</strong>
+                <strong>Schedule Meetings</strong>
               
             </p>
         </div>
@@ -235,22 +237,22 @@
               <li class="mb-4 flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Register Law Firm
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Schedule a Meeting
               </li>
               <li class="mb-4 flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Register Lawyers
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Set Meeting Status
               </li>
               <li class="mb-4 flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Manage Lawyers
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Filter Meetings
               </li>
               <li class="mb-4 flex">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Firm Dashboard
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Update Meeting Status
               </li>
              
             </ol>
