@@ -110,8 +110,8 @@
                 <label for="case_progress" class="text-blue-300">Case Progress</label>
                 <br>
                 <div class="flex flex-col space-y-2 p-2 w-80">
-   <input type="number" id="progress" name="progress" value="{{ old('progress', $case->progress) }}"
-                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1" />
+   <input type="number" id="progress" name="progress" value="{{ old('progress', $case->progress) }}" min="0" max="100"
+                    class="input input-bordered border-cyan-400 w-full max-w-xs mt-1 " />
  
 </div>
             </div>
