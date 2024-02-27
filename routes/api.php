@@ -67,6 +67,8 @@ Route::delete('/clients/{id}',[ClientController::class,'destroy']);
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
+    Route::post('/lawyerlogout', [LawyerAuthController::class, 'logout'])->name('lawyer.logout');
+
 
    
 
